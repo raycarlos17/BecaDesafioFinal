@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cl_primary"
+        android:layout_width="match_parent"
+        android:layout_height="360dp"
+        android:background="@color/primaryColor"
+        app:layout_constraintBottom_toTopOf="@id/cl_secudary"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints">
+
+        <TextView
+            android:id="@+id/tv_title_btc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:text="@string/btc_title_tv"
+            android:textColor="#F3F3F3"
+            android:textSize="25sp"
+            android:textStyle="bold"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/iv_coin"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="40dp"
+            android:background="@color/black"
+            android:contentDescription="@string/iv_content_description_simbolo_da_moeda"
+            app:layout_constraintLeft_toLeftOf="@id/tv_title_btc"
+            app:layout_constraintRight_toRightOf="@id/tv_title_btc"
+            app:layout_constraintTop_toBottomOf="@id/tv_title_btc"
+            tools:src="@tools:sample/avatars" />
+
+        <TextView
+            android:id="@+id/tv_coin_value"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:hint="@string/coin_value_hint_zero"
+            android:textColor="#F3F3F3"
+            android:textColorHint="#F3F3F3"
+            android:textSize="40sp"
+            android:textStyle="normal"
+            app:layout_constraintHorizontal_bias="0.505"
+            app:layout_constraintLeft_toLeftOf="@id/iv_coin"
+            app:layout_constraintRight_toRightOf="@id/iv_coin"
+            app:layout_constraintTop_toBottomOf="@id/iv_coin" />
+
+        <Button
+            android:id="@+id/btn_add_favorite"
+            android:layout_width="270dp"
+            android:layout_height="70dp"
+            android:layout_marginTop="40dp"
+            android:text="@string/btn_adicionar"
+            android:textColor="#F3F3F3"
+            android:textSize="18sp"
+            app:layout_constraintCircleRadius="@dimen/cardview_default_radius"
+            app:layout_constraintLeft_toLeftOf="@id/tv_coin_value"
+            app:layout_constraintRight_toRightOf="@id/tv_coin_value"
+            app:layout_constraintTop_toBottomOf="@id/tv_coin_value" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cl_secudary"
+        android:layout_width="match_parent"
+        android:layout_height="375dp"
+        android:background="#191818"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/cl_primary">
+
+        <TextView
+            android:id="@+id/tv_volumes_negociados"
+            style="@style/TextView_volumes_negociados"
+            android:layout_marginTop="20dp"
+            android:text="@string/volumes_negociados"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_ultima_hora"
+            style="@style/TextView_volumes_negociados"
+            android:layout_marginStart="30dp"
+            android:text="@string/ltima_hora"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_volumes_negociados" />
+
+        <TextView
+            android:id="@+id/tv_coin_value_ultima_hora"
+            style="@style/TextView_volumes_negociados"
+            android:layout_marginEnd="30dp"
+            android:hint="@string/coin_value_hint_zero"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_volumes_negociados" />
+
+        <TextView
+            android:id="@+id/tv_ultimo_mes"
+            style="@style/TextView_volumes_negociados"
+            android:text="@string/ultimo_mes"
+            app:layout_constraintLeft_toLeftOf="@id/tv_ultima_hora"
+            app:layout_constraintTop_toBottomOf="@id/tv_ultima_hora" />
+
+        <TextView
+            android:id="@+id/tv_coin_value_ultimo_mes"
+            style="@style/TextView_volumes_negociados"
+            android:hint="@string/coin_value_hint_zero"
+            app:layout_constraintLeft_toLeftOf="@id/tv_coin_value_ultima_hora"
+            app:layout_constraintTop_toBottomOf="@id/tv_coin_value_ultima_hora" />
+
+        <TextView
+            android:id="@+id/tv_ultimo_ano"
+            style="@style/TextView_volumes_negociados"
+            android:text="@string/ultimo_ano"
+            app:layout_constraintLeft_toLeftOf="@id/tv_ultimo_mes"
+            app:layout_constraintTop_toBottomOf="@id/tv_ultimo_mes" />
+
+        <TextView
+            android:id="@+id/tv_coin_value_ultimo_ano"
+            style="@style/TextView_volumes_negociados"
+            android:hint="@string/coin_value_hint_zero"
+            app:layout_constraintLeft_toLeftOf="@id/tv_coin_value_ultimo_mes"
+            app:layout_constraintTop_toBottomOf="@id/tv_coin_value_ultimo_mes" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
+
