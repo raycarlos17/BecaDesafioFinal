@@ -1,7 +1,5 @@
 package com.app.bitcoinapp.repository
 
-import android.content.Context
-import android.widget.Toast
 import com.app.bitcoinapp.model.Coin
 import com.app.bitcoinapp.model.api.CoinRestApiTask
 import retrofit2.Call
