@@ -9,6 +9,7 @@ import android.widget.Toast
 import androidx.appcompat.app.ActionBar
 import androidx.lifecycle.ViewModelProvider
 import com.app.bitcoinapp.R
+import com.app.bitcoinapp.model.Coin
 import com.app.bitcoinapp.model.helper.ClickItemListener
 import com.app.bitcoinapp.viewmodel.MainViewModel
 import kotlinx.android.synthetic.main.activity_main.*
@@ -71,8 +72,9 @@ class MainActivity : AppCompatActivity(), View.OnClickListener, ClickItemListene
         return now.format(formatter).toString()
     }
 
-    override fun ClickItemList() {
+    override fun ClickItemList(coin: Coin) {
         val intent = Intent(this, Coin_description::class.java)
+        intent.putExtra("EXTRA_COIN", coin)
         startActivity(intent)
     }
 }

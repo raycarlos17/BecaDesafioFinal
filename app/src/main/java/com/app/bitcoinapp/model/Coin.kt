@@ -17,11 +17,14 @@ data class Coin(
     @SerializedName("data_end")
     val dataEnd: String,
     @SerializedName("volume_1hrs_usd")
-    val volumeHourUsd: String,
+    var volumeHourUsd: String,
     @SerializedName("volume_1day_usd")
-    val volumeDayUsd: String,
+    var volumeDayUsd: String,
     @SerializedName("volume_1mth_usd")
-    val volumeMthUsd: String,
+    var volumeMthUsd: String,
     @SerializedName("price_usd")
-    val priceUsd: String
+    var priceUsd: String?,
+    @SerializedName("id_icon")
+    val iconId: String?,
+    var iconUrl: String?
 ): Parcelable
