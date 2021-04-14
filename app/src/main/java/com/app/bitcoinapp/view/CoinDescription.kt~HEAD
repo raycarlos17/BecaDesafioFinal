@@ -7,7 +7,7 @@ import com.app.bitcoinapp.model.Coin
 import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.activity_coin_description.*
 
-class CoinDescription : AppCompatActivity() {
+class Coin_description : AppCompatActivity() {
 
     private var coin: Coin? = null
 
@@ -33,9 +33,10 @@ class CoinDescription : AppCompatActivity() {
 
     private fun setupCoin(){
         tv_coin_value.text = coin?.priceUsd
+        tv_title_btc.text = coin?.assetId
         tv_coin_value_ultima_hora.text = coin?.volumeHourUsd
-        tv_coin_value_ultimo_dia.text = coin?.volumeDayUsd
-        tv_coin_value_ultimo_mes.text = coin?.volumeMthUsd
+        tv_coin_value_ultimo_mes.text = coin?.volumeDayUsd
+        tv_coin_value_ultimo_ano.text = coin?.volumeMthUsd
         Picasso.get().load("${coin?.iconUrl}.png").placeholder(R.drawable.ic_image).into(iv_coin)
     }
 }

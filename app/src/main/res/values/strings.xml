@@ -7,7 +7,6 @@
     <string name="volumes_negociados">volumes negociados</string>
     <string name="ltima_hora">última hora</string>
     <string name="ultimo_mes">último mês</string>
-    <string name="ultimo_ano">último ano</string>
     <string name="coin_value_hint_zero">$ 000.000.00</string>
     <string name="iv_content_description_simbolo_da_moeda">Simbolo da moeda</string>
     <string name="btn_voltar"><![CDATA[< voltar]]></string>
@@ -16,4 +15,5 @@
     <string name="ll_tv_menu_bottom_moedas">Moedas</string>
     <string name="ll_tv_menu_bottom_adicionadas">Adicionadas</string>
     <string name="tv_title_bitcoin">Bitcoin</string>
+    <string name="ultimo_dia">último dia</string>
 </resources>

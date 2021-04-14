@@ -73,7 +73,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener, ClickItemListene
     }
 
     override fun ClickItemList(coin: Coin) {
-        val intent = Intent(this, Coin_description::class.java)
+        val intent = Intent(this, CoinDescription::class.java)
         intent.putExtra("EXTRA_COIN", coin)
         startActivity(intent)
     }
