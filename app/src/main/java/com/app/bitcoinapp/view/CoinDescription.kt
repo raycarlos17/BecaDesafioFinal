@@ -21,6 +21,10 @@ class Coin_description : AppCompatActivity() {
 
         getExtras()
         setupCoin()
+
+        ll_button_back.setOnClickListener {
+
+        }
     }
 
     private fun getExtras(){
