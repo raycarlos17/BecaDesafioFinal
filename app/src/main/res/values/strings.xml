@@ -12,4 +12,5 @@
     <string name="iv_content_description_simbolo_da_moeda">Simbolo da moeda</string>
     <string name="btn_voltar"><![CDATA[< voltar]]></string>
     <string name="date_example">4 jan 2021</string>
+    <string name="tv_btn_voltar">Voltar</string>
 </resources>
