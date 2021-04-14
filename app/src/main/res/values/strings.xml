@@ -1,3 +1,13 @@
 <resources>
-    <string name="app_name">BitCoinApp</string>
+    <string name="app_name">Moeda Digital</string>
+    <string name="title_main_activity">Moeda Digital</string>
+    <string name="hint_search_bar">Search</string>
+    <string name="btc_title_tv">BTC</string>
+    <string name="btn_adicionar">ADICIONAR</string>
+    <string name="volumes_negociados">volumes negociados</string>
+    <string name="ltima_hora">última hora</string>
+    <string name="ultimo_mes">último mês</string>
+    <string name="ultimo_ano">último ano</string>
+    <string name="coin_value_hint_zero">$ 000.000.00</string>
+    <string name="iv_content_description_simbolo_da_moeda">Simbolo da moeda</string>
 </resources>
