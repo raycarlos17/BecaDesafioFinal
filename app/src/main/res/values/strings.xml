@@ -13,4 +13,6 @@
     <string name="btn_voltar"><![CDATA[< voltar]]></string>
     <string name="date_example">4 jan 2021</string>
     <string name="tv_btn_voltar">Voltar</string>
+    <string name="ll_tv_menu_bottom_moedas">Moedas</string>
+    <string name="ll_tv_menu_bottom_adicionadas">Adicionadas</string>
 </resources>
