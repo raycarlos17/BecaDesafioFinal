@@ -9,13 +9,13 @@ import android.widget.Toast
 import androidx.appcompat.app.ActionBar
 import androidx.lifecycle.ViewModelProvider
 import com.app.bitcoinapp.R
+import com.app.bitcoinapp.model.helper.ClickItemListener
 import com.app.bitcoinapp.viewmodel.MainViewModel
 import kotlinx.android.synthetic.main.activity_main.*
-import org.w3c.dom.Text
 import java.time.LocalDateTime
 import java.time.format.DateTimeFormatter
 
-class MainActivity : AppCompatActivity(), View.OnClickListener {
+class MainActivity : AppCompatActivity(), View.OnClickListener, ClickItemListener {
 
     private lateinit var mainViewModel: MainViewModel
 
@@ -40,7 +40,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         mainViewModel.init()
         mainViewModel.bitCointList.observe(this, {  list ->
             if (list != null){
-                bit_coin_list.adapter = BitCoinAdapter(list)
+                bit_coin_list.adapter = BitCoinAdapter(list, this)
             }else{
                 Toast.makeText(
                         this,
@@ -69,5 +69,10 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         val now = LocalDateTime.now()
         val formatter = DateTimeFormatter.ofPattern("dd MMM yyyy")
         return now.format(formatter).toString()
+    }
+
+    override fun ClickItemList() {
+        val intent = Intent(this, Coin_description::class.java)
+        startActivity(intent)
     }
 }
