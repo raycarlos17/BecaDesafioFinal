@@ -65,6 +65,7 @@
             android:text="@string/btn_adicionar"
             android:textColor="#F3F3F3"
             android:textSize="18sp"
+            android:backgroundTint="@color/colorSecondary"
             app:layout_constraintLeft_toLeftOf="@id/tv_coin_value"
             app:layout_constraintRight_toRightOf="@id/tv_coin_value"
             app:layout_constraintTop_toBottomOf="@id/tv_coin_value" />
