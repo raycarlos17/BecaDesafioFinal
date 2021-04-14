@@ -3,6 +3,7 @@ package com.app.bitcoinapp.view
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.app.bitcoinapp.R
+import kotlinx.android.synthetic.main.activity_coin_description.*
 import kotlinx.android.synthetic.main.coin_favorites_recyclerview.*
 import java.time.LocalDateTime
 import java.time.format.DateTimeFormatter
@@ -22,5 +23,4 @@ class CoinFavorites : AppCompatActivity() {
         val formatter = DateTimeFormatter.ofPattern("dd MMM yyyy")
         return now.format(formatter).toString()
     }
-
 }

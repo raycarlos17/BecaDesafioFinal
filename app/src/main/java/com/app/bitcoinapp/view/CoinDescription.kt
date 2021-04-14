@@ -1,5 +1,6 @@
 package com.app.bitcoinapp.view
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.app.bitcoinapp.R
@@ -23,9 +24,10 @@ class CoinDescription : AppCompatActivity() {
         setupCoin()
 
         ll_button_back.setOnClickListener {
-
+            backButton()
         }
     }
+
 
     private fun getExtras(){
         coin = intent.getParcelableExtra("EXTRA_COIN")
@@ -37,5 +39,11 @@ class CoinDescription : AppCompatActivity() {
         tv_coin_value_ultimo_dia.text = coin?.volumeDayUsd
         tv_coin_value_ultimo_mes.text = coin?.volumeMthUsd
         Picasso.get().load("${coin?.iconUrl}.png").placeholder(R.drawable.ic_image).into(iv_coin)
+    }
+
+    private fun backButton() {
+        val intent = Intent(this, MainActivity::class.java)
+        startActivity(intent)
+        finish()
     }
 }
