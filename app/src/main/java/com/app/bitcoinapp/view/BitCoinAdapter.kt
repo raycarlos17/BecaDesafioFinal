@@ -8,12 +8,13 @@ import androidx.appcompat.widget.AppCompatTextView
 import androidx.recyclerview.widget.RecyclerView
 import coil.load
 import com.app.bitcoinapp.R
+import com.app.bitcoinapp.model.helper.ClickItemListener
 
-class BitCoinAdapter(private var list: List<String>) : RecyclerView.Adapter<BitCoinViewHolder>() {
+class BitCoinAdapter(private var list: List<String>, private var listener: ClickItemListener) : RecyclerView.Adapter<BitCoinViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): BitCoinViewHolder {
         val view = LayoutInflater.from(parent.context)
                 .inflate(R.layout.bitcoin_item, parent, false)
-        return BitCoinViewHolder(view)
+        return BitCoinViewHolder(view,listener)
     }
 
     override fun onBindViewHolder(holder: BitCoinViewHolder, position: Int) {
@@ -26,7 +27,8 @@ class BitCoinAdapter(private var list: List<String>) : RecyclerView.Adapter<BitC
 }
 
 class BitCoinViewHolder(
-        itemView: View
+        itemView: View,
+        listener: ClickItemListener,
 
 ) : RecyclerView.ViewHolder(itemView) {
 
@@ -34,6 +36,12 @@ class BitCoinViewHolder(
     private val subTitle: AppCompatTextView = itemView.findViewById(R.id.item_sub_title)
     private val value: AppCompatTextView = itemView.findViewById(R.id.item_value)
     private val image: AppCompatImageView = itemView.findViewById(R.id.item_image)
+
+    init {
+        itemView.setOnClickListener {
+            listener.ClickItemList()
+        }
+    }
 
     fun bind(bitCoin: String) {
         title.text = bitCoin.toString()
