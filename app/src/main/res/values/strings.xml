@@ -10,4 +10,5 @@
     <string name="ultimo_ano">último ano</string>
     <string name="coin_value_hint_zero">$ 000.000.00</string>
     <string name="iv_content_description_simbolo_da_moeda">Simbolo da moeda</string>
+    <string name="btn_voltar"><![CDATA[< voltar]]></string>
 </resources>
