@@ -15,4 +15,5 @@
     <string name="tv_btn_voltar">Voltar</string>
     <string name="ll_tv_menu_bottom_moedas">Moedas</string>
     <string name="ll_tv_menu_bottom_adicionadas">Adicionadas</string>
+    <string name="tv_title_bitcoin">Bitcoin</string>
 </resources>

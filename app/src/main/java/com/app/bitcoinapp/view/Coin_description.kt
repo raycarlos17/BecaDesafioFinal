@@ -15,6 +15,10 @@ class Coin_description : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_coin_description)
 
+        if (supportActionBar != null) {
+            supportActionBar!!.hide()
+        }
+
         getExtras()
         setupCoin()
     }
