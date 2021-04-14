@@ -6,7 +6,7 @@ import retrofit2.converter.gson.GsonConverterFactory
 class CoinRestApiTask {
 
     companion object {
-        const val BASE_URL = "https://rest-sandbox.coinapi.io/"
+        const val BASE_URL = "https://rest.coinapi.io"
     }
 
     private fun assetsProvider(): Retrofit = Retrofit.Builder().baseUrl(BASE_URL).addConverterFactory(GsonConverterFactory.create()).build()
