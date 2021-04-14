@@ -36,16 +36,16 @@ class MainActivity : AppCompatActivity(), View.OnClickListener, ClickItemListene
 
     private fun mainViewObserver(){
         mainViewModel =
-                ViewModelProvider.NewInstanceFactory().create(MainViewModel::class.java)
+            ViewModelProvider.NewInstanceFactory().create(MainViewModel::class.java)
         mainViewModel.init()
-        mainViewModel.bitCointList.observe(this, {  list ->
+        mainViewModel.bitCoinsList.observe(this, {  list ->
             if (list != null){
                 bit_coin_list.adapter = BitCoinAdapter(list, this)
             }else{
                 Toast.makeText(
-                        this,
-                        "Ops tivemos um problema, tente novamente mais tarde!",
-                        Toast.LENGTH_LONG
+                    this,
+                    "Ops tivemos um problema, tente novamente mais tarde!",
+                    Toast.LENGTH_LONG
                 ).show()
             }
         })
