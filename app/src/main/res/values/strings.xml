@@ -1,5 +1,7 @@
 <resources>
-    <string name="app_name">BitCoinApp</string>
+    <string name="app_name">Moeda Digital</string>
+    <string name="title_main_activity">Moeda Digital</string>
+    <string name="hint_search_bar">Search</string>
     <string name="btc_title_tv">BTC</string>
     <string name="btn_adicionar">ADICIONAR</string>
     <string name="volumes_negociados">volumes negociados</string>
