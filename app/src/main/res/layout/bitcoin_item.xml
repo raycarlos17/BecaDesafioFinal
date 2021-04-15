@@ -36,6 +36,15 @@
             app:layout_constraintTop_toTopOf="@+id/item_image"
             tools:text="Exemplo title" />
 
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/image_favorite"
+            android:layout_width="18dp"
+            android:layout_height="18dp"
+            android:layout_marginStart="8dp"
+            android:src="@drawable/ic_baseline_star_24"
+            app:layout_constraintLeft_toRightOf="@+id/item_title"
+            app:layout_constraintTop_toTopOf="@+id/item_title"/>
+
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/item_sub_title"
             android:layout_width="0dp"

@@ -17,6 +17,7 @@ interface CoinAPI {
         "X-CoinAPI-Key: $API_KEY"
     )
 
+
     @GET(ALL_ASSETS_PATH)
     fun getAllAssets(): Call<List<Coin>>
 
