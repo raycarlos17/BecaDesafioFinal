@@ -87,7 +87,7 @@ class CoinDescriptionActivity : AppCompatActivity(), View.OnClickListener {
                     sharedPreferences.storeBoolean(coin?.assetId.toString(), true)
                     verifyFavorite()
                     setupCoin()
-                } else if (statusBtn == "DELETE") {
+                } else if (statusBtn == "REMOVER") {
                     sharedPreferences.storeBoolean(coin?.assetId.toString(), false)
                     verifyFavorite()
                     setupCoin()
