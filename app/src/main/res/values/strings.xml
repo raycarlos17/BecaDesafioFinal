@@ -16,4 +16,5 @@
     <string name="ll_tv_menu_bottom_moedas">Moedas</string>
     <string name="ll_tv_menu_bottom_adicionadas">Adicionadas</string>
     <string name="tv_title_bitcoin">Bitcoin</string>
+    <string name="btn_add_favorite_delete">DELETE</string>
 </resources>

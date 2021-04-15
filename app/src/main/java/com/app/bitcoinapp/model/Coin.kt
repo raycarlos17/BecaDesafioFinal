@@ -1,8 +1,10 @@
 package com.app.bitcoinapp.model
 
+import android.content.Context
 import android.os.Parcelable
 import com.google.gson.annotations.SerializedName
 import kotlinx.android.parcel.Parcelize
+import kotlinx.android.parcel.RawValue
 
 @Parcelize
 data class Coin(
@@ -26,5 +28,6 @@ data class Coin(
     var priceUsd: String?,
     @SerializedName("id_icon")
     val iconId: String?,
-    var iconUrl: String?
+    var iconUrl: String?,
+    var favorite: Boolean,
 ): Parcelable

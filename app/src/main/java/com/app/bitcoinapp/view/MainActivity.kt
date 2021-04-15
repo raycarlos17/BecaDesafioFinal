@@ -41,7 +41,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener, ClickItemListene
         mainViewModel.init()
         mainViewModel.bitCoinsList.observe(this, {  list ->
             if (list != null){
-                bit_coin_list.adapter = BitCoinAdapter(list, this)
+                bit_coin_list.adapter = BitCoinAdapter(this,list, this)
             }else{
                 Toast.makeText(
                     this,
@@ -62,7 +62,10 @@ class MainActivity : AppCompatActivity(), View.OnClickListener, ClickItemListene
                 finish()
             }
 
-            (id == R.id.btn_detail) -> {}
+            (id == R.id.btn_detail) -> {
+                val intentFavorite = Intent(this, FavoriteActivity::class.java)
+                startActivity(intentFavorite)
+            }
         }
     }
 
@@ -73,7 +76,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener, ClickItemListene
     }
 
     override fun ClickItemList(coin: Coin) {
-        val intent = Intent(this, Coin_description::class.java)
+        val intent = Intent(this, CoinDescriptionActivity::class.java)
         intent.putExtra("EXTRA_COIN", coin)
         startActivity(intent)
     }

@@ -68,6 +68,16 @@
             app:layout_constraintTop_toBottomOf="@id/tv_title_btc"
             tools:src="@tools:sample/avatars" />
 
+        <ImageView
+            android:id="@+id/iv_favorite"
+            android:layout_width="18dp"
+            android:layout_height="18dp"
+            android:layout_marginStart="10dp"
+            app:layout_constraintLeft_toRightOf="@+id/iv_coin"
+            app:layout_constraintTop_toTopOf="@+id/iv_coin"
+            app:tint="#F3F3F3"
+            android:src="@drawable/ic_baseline_star_24"/>
+
         <TextView
             android:id="@+id/tv_coin_value"
             android:layout_width="wrap_content"
