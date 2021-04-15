@@ -35,6 +35,7 @@ class CoinDescription : AppCompatActivity() {
 
     private fun setupCoin(){
         tv_coin_value.text = coin?.priceUsd
+        tv_title_btc.text = coin?.assetId
         tv_coin_value_ultima_hora.text = coin?.volumeHourUsd
         tv_coin_value_ultimo_dia.text = coin?.volumeDayUsd
         tv_coin_value_ultimo_mes.text = coin?.volumeMthUsd
