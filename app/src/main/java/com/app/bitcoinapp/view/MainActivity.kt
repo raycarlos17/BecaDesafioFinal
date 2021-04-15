@@ -58,13 +58,13 @@ class MainActivity : AppCompatActivity(), View.OnClickListener, ClickItemListene
         val id = v.id
 
         when{
-            (id == R.id.ll_menu_bottom_moedas) -> {
+            (id == R.id.btn_main) -> {
                 val intent = Intent(this, MainActivity::class.java)
                 startActivity(intent)
                 finish()
             }
 
-            (id == R.id.ll_menu_bottom_adicionadas) -> {
+            (id == R.id.btn_detail) -> {
 
             }
         }
