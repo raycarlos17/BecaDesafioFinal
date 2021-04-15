@@ -13,11 +13,9 @@ import com.app.bitcoinapp.R
 import com.app.bitcoinapp.model.Coin
 import com.app.bitcoinapp.model.helper.ClickItemListener
 import com.app.bitcoinapp.model.helper.SetDate
+import com.app.bitcoinapp.view.adapter.BitCoinAdapter
 import com.app.bitcoinapp.viewmodel.MainViewModel
 import kotlinx.android.synthetic.main.activity_main.*
-import java.text.SimpleDateFormat
-import java.time.LocalDateTime
-import java.time.format.DateTimeFormatter
 
 class MainActivity : AppCompatActivity(), View.OnClickListener, ClickItemListener {
 

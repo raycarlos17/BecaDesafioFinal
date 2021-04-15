@@ -2,7 +2,6 @@ package com.app.bitcoinapp.view
 
 import android.content.Context
 import android.os.Bundle
-import android.os.PersistableBundle
 import android.view.View
 import android.widget.TextView
 import android.widget.Toast
@@ -13,9 +12,8 @@ import com.app.bitcoinapp.R
 import com.app.bitcoinapp.model.Coin
 import com.app.bitcoinapp.model.helper.SetDate
 import com.app.bitcoinapp.model.helper.SharedPreferences
+import com.app.bitcoinapp.view.adapter.FavoritesAdapter
 import com.app.bitcoinapp.viewmodel.MainViewModel
-import kotlinx.android.synthetic.main.activity_main.*
-import kotlinx.android.synthetic.main.activity_main.bit_coin_list
 import kotlinx.android.synthetic.main.activity_main.btn_main
 import kotlinx.android.synthetic.main.coin_favorites_recyclerview.*
 

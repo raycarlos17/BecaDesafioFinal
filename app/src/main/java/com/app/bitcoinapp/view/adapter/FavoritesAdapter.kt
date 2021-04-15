@@ -1,4 +1,4 @@
-package com.app.bitcoinapp.view
+package com.app.bitcoinapp.view.adapter
 
 import android.content.Context
 import android.view.LayoutInflater
@@ -9,7 +9,6 @@ import androidx.appcompat.widget.AppCompatImageView
 import androidx.appcompat.widget.AppCompatTextView
 import com.app.bitcoinapp.R
 import com.app.bitcoinapp.model.Coin
-import com.app.bitcoinapp.model.helper.SharedPreferences
 import com.squareup.picasso.Picasso
 
 class FavoritesAdapter(private var context: Context, private var list: List<Coin>) :
