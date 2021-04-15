@@ -8,7 +8,7 @@ import com.app.bitcoinapp.model.Coin
 import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.activity_coin_description.*
 
-class CoinDescription : AppCompatActivity() {
+class CoinDescriptionActivity : AppCompatActivity() {
 
     private var coin: Coin? = null
 

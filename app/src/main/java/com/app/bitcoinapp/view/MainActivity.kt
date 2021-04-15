@@ -30,10 +30,8 @@ class MainActivity : AppCompatActivity(), View.OnClickListener, ClickItemListene
         btn_main.setOnClickListener(this)
         btn_detail.setOnClickListener(this)
 
-
         val date:TextView = findViewById(R.id.tv_date)
         date.text = getLocalDate()
-
 
         initViewModel()
         mainViewObserver()
@@ -107,7 +105,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener, ClickItemListene
     }
 
     override fun ClickItemList(coin: Coin) {
-        val intent = Intent(this, CoinDescription::class.java)
+        val intent = Intent(this, CoinDescriptionActivity::class.java)
         intent.putExtra("EXTRA_COIN", coin)
         startActivity(intent)
     }
