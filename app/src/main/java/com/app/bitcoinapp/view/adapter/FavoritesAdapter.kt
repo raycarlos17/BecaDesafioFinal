@@ -9,9 +9,14 @@ import androidx.appcompat.widget.AppCompatImageView
 import androidx.appcompat.widget.AppCompatTextView
 import com.app.bitcoinapp.R
 import com.app.bitcoinapp.model.Coin
+import com.app.bitcoinapp.model.helper.ClickItemListener
 import com.squareup.picasso.Picasso
 
-class FavoritesAdapter(private var context: Context, private var list: List<Coin>) :
+class FavoritesAdapter(
+    private var context: Context,
+    private var list: List<Coin>,
+    private var listener: ClickItemListener
+) :
     BaseAdapter() {
 
     private var layoutInflater: LayoutInflater? = null
@@ -20,14 +25,24 @@ class FavoritesAdapter(private var context: Context, private var list: List<Coin
         return list.size
     }
 
-    override fun getItem(position: Int): List<String> {
+    override fun getItem(position: Int): List<Coin> {
 
-        val listCoin: MutableList<String> = arrayListOf()
-        listCoin.add(list[position].assetId)
-        listCoin.add(list[position].name)
-        listCoin.add(list[position].priceUsd!!)
-        listCoin.add(list[position].iconUrl.toString())
-
+        val listCoin: MutableList<Coin> = arrayListOf()
+        val coin: Coin = Coin(
+            list[position].assetId,
+            list[position].name,
+            list[position].isCrypto,
+            list[position].dataStart,
+            list[position].dataEnd,
+            list[position].volumeHourUsd,
+            list[position].volumeDayUsd,
+            list[position].volumeMthUsd,
+            list[position].priceUsd!!,
+            list[position].iconId,
+            list[position].iconUrl,
+            list[position].favorite
+        )
+        listCoin.add(coin)
         return listCoin
     }
 
@@ -56,19 +71,29 @@ class FavoritesAdapter(private var context: Context, private var list: List<Coin
         val value: AppCompatTextView? = convertView?.findViewById(R.id.tv_coin_value_favorite)
         val image: AppCompatImageView? = convertView?.findViewById(R.id.iv_favorite_icon)
 
-        val list = getItem(position)
+        val list: List<Coin> = getItem(position)
 
+<<<<<<< HEAD
+        convertView?.setOnClickListener {
+            listener.ClickItemList(list[0])
+        }
 
+        title?.text = list[0].name
+        subTitle?.text = list[0].assetId
+        value?.text = list[0].priceUsd
+        Picasso.get().load("${list[0].iconUrl}.png")
+=======
         title?.text = list[0]
         title?.contentDescription = "Nome da moeda ${list[0]}"
 
-        subTitle?.text = list.get(1)
+        subTitle?.text = list[1]
         subTitle?.contentDescription = "Sigla da moeda ${list[1]}"
 
         value?.text = list[2]
         value?.contentDescription = "Valor da moeda ${list[2]}"
 
         Picasso.get().load("${list[3]}.png")
+>>>>>>> 66d8641fa8f81d18c1447784c25a76423ce65279
             .placeholder(R.drawable.ic_image)
             .into(image)
 

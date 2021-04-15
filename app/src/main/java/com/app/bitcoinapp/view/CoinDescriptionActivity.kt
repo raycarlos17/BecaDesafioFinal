@@ -80,6 +80,20 @@ class CoinDescriptionActivity : AppCompatActivity(), View.OnClickListener {
 
     override fun onClick(v: View) {
         val id = v.id
+<<<<<<< HEAD
+        when (id) {
+            R.id.btn_add_favorite -> {
+                val statusBtn = btn_add_favorite.text.toString()
+                if(statusBtn == "ADICIONAR"){
+                    sharedPreferences.storeBoolean(coin?.assetId.toString(),true)
+                    verifyFavorite()
+                    setupCoin()
+                }else if(statusBtn == "DELETE" ){
+                    sharedPreferences.storeBoolean(coin?.assetId.toString(),false)
+                    verifyFavorite()
+                    setupCoin()
+                }
+=======
         if (id == R.id.btn_add_favorite){
             val statusBtn = btn_add_favorite.text.toString()
             if(statusBtn == "ADICIONAR"){
@@ -91,15 +105,19 @@ class CoinDescriptionActivity : AppCompatActivity(), View.OnClickListener {
                 verifyFavorite()
                 setupCoin()
             }
+>>>>>>> 66d8641fa8f81d18c1447784c25a76423ce65279
 
-        }
-        else if (id == R.id.ll_button_back){
-            backButton()
-        }else if(id == R.id.btn_main){
-            backButton()
-        }else if(id == R.id.btn_detail){
-            val intentFavorite = Intent(this, FavoriteActivity::class.java)
-            startActivity(intentFavorite)
+            }
+            R.id.ll_button_back -> {
+                backButton()
+            }
+            R.id.btn_main -> {
+                backButton()
+            }
+            R.id.btn_detail -> {
+                val intentFavorite = Intent(this, FavoriteActivity::class.java)
+                startActivity(intentFavorite)
+            }
         }
 
     }

@@ -1,6 +1,7 @@
 package com.app.bitcoinapp.view
 
 import android.content.Context
+import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import android.widget.TextView
@@ -10,6 +11,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
 import com.app.bitcoinapp.R
 import com.app.bitcoinapp.model.Coin
+import com.app.bitcoinapp.model.helper.ClickItemListener
 import com.app.bitcoinapp.model.helper.SetDate
 import com.app.bitcoinapp.model.helper.SharedPreferences
 import com.app.bitcoinapp.view.adapter.FavoritesAdapter
@@ -17,7 +19,7 @@ import com.app.bitcoinapp.viewmodel.MainViewModel
 import kotlinx.android.synthetic.main.activity_main.btn_main
 import kotlinx.android.synthetic.main.coin_favorites_recyclerview.*
 
-class FavoriteActivity : AppCompatActivity(), View.OnClickListener {
+class FavoriteActivity : AppCompatActivity(), View.OnClickListener, ClickItemListener {
 
     private lateinit var mainViewModel: MainViewModel
     private lateinit var sharedPreferences: SharedPreferences
@@ -46,7 +48,8 @@ class FavoriteActivity : AppCompatActivity(), View.OnClickListener {
 
         mainViewModel.bitCoinsList.observe(this, { list ->
             if (list != null) {
-                gv_list_coin_favorite.adapter = FavoritesAdapter(this, createList(list, this))
+                gv_list_coin_favorite.adapter =
+                    FavoritesAdapter(this, createList(list, this),this@FavoriteActivity)
             } else {
                 Toast.makeText(
                     this,
@@ -76,5 +79,11 @@ class FavoriteActivity : AppCompatActivity(), View.OnClickListener {
         }
 
         return newListCoin
+    }
+
+    override fun ClickItemList(coin: Coin) {
+        val intent = Intent(this@FavoriteActivity,CoinDescriptionActivity::class.java)
+        intent.putExtra("EXTRA_COIN", coin)
+        startActivity(intent)
     }
 }
