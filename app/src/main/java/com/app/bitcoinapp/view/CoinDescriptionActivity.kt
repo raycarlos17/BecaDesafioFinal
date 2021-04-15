@@ -41,9 +41,11 @@ class CoinDescriptionActivity : AppCompatActivity(), View.OnClickListener {
         val statusFavorite = sharedPreferences.getBoolean(coin?.assetId.toString())
         if (statusFavorite) {
             btn_add_favorite.text = getString(R.string.btn_add_favorite_delete)
+            btn_add_favorite.contentDescription = getString(R.string.btn_add_favorite_delete)
             coin?.favorite = false
         } else if (!statusFavorite) {
             btn_add_favorite.text = getString(R.string.btn_adicionar)
+            btn_add_favorite.contentDescription = getString(R.string.btn_adicionar)
             coin?.favorite = true
         }
     }
