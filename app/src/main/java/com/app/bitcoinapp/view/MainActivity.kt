@@ -4,6 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import android.widget.SearchView
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.ActionBar
@@ -34,13 +35,17 @@ class MainActivity : AppCompatActivity(), View.OnClickListener, ClickItemListene
         date.text = getLocalDate()
         date.contentDescription = getLocalDate()
 
+        initViewModel()
         mainViewObserver()
+        initSearch()
+    }
+
+    private fun initViewModel(){
+        mainViewModel = ViewModelProvider.NewInstanceFactory().create(MainViewModel::class.java)
+        mainViewModel.init()
     }
 
     private fun mainViewObserver(){
-        mainViewModel =
-            ViewModelProvider.NewInstanceFactory().create(MainViewModel::class.java)
-        mainViewModel.init()
         mainViewModel.bitCoinsList.observe(this, {  list ->
             if (list != null){
                 bit_coin_list.adapter = BitCoinAdapter(this,list, this)
@@ -50,6 +55,33 @@ class MainActivity : AppCompatActivity(), View.OnClickListener, ClickItemListene
                     "Ops tivemos um problema, tente novamente mais tarde!",
                     Toast.LENGTH_LONG
                 ).show()
+            }
+        })
+    }
+
+    private fun searchCoins(search: String){
+        var searchedCoins: MutableList<Coin> = arrayListOf()
+        mainViewModel.bitCoinsList.value?.forEach{
+            if(it.name != null){
+                if(it.name.contains(search, ignoreCase = true)){
+                    searchedCoins.add(it)
+                }
+            }
+        }
+        bit_coin_list.adapter = BitCoinAdapter(searchedCoins, this)
+    }
+
+    private fun initSearch(){
+
+        sv_search_bar.setOnQueryTextListener(object: SearchView.OnQueryTextListener{
+            override fun onQueryTextSubmit(query: String): Boolean {
+                searchCoins(query)
+                return false
+            }
+
+            override fun onQueryTextChange(newText: String): Boolean {
+                searchCoins(newText)
+                return false
             }
         })
     }

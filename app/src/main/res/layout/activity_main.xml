@@ -20,32 +20,36 @@
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/textinput_search_bar"
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardview_search_bar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="26dp"
-        android:layout_marginEnd="32dp"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_date">
+        app:layout_constraintTop_toBottomOf="@+id/tv_date"
+        android:backgroundTint="@color/colorPrimaryVariant"
+        android:layout_marginHorizontal="32dp"
+        android:layout_marginTop="26dp"
+        android:padding="5dp"
+        app:cardCornerRadius="10dp" >
 
-        <androidx.appcompat.widget.AppCompatEditText
-            android:id="@+id/edt_search_bar"
+        <SearchView
+            android:id="@+id/sv_search_bar"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@color/colorPrimaryVariant"
-            android:contentDescription="@string/barra_de_pesquisar_moeda"
-            android:enabled="false"
-            android:hint="@string/hint_search_bar"
-            android:inputType="text"
-            android:textColorHint="@color/colorPrimaryLight"
-            tools:ignore="ContentDescription" />
+            android:layout_height="34dp"
+            android:iconifiedByDefault="false"
+            android:queryHint="@string/hint_search_bar"
+            android:inputType="text" />
 
-    </com.google.android.material.textfield.TextInputLayout>
+    </androidx.cardview.widget.CardView>
 
+    <View
+        android:id="@+id/view_line"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="@color/colorPrimaryVariant"
+        app:layout_constraintBottom_toTopOf="@id/bit_coin_list"
+        app:layout_constraintStart_toStartOf="parent"/>
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/bit_coin_list"
@@ -58,7 +62,7 @@
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textinput_search_bar"
+        app:layout_constraintTop_toBottomOf="@+id/cardview_search_bar"
         app:layout_constraintVertical_bias="0.0"
         tools:listitem="@layout/bitcoin_item" />
 
