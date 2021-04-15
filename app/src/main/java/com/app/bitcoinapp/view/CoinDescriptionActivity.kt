@@ -52,8 +52,8 @@ class CoinDescriptionActivity : AppCompatActivity(), View.OnClickListener {
     private fun setupCoin(){
         tv_coin_value.text = coin?.priceUsd
         tv_coin_value_ultima_hora.text = coin?.volumeHourUsd
-        tv_coin_value_ultimo_mes.text = coin?.volumeDayUsd
-        tv_coin_value_ultimo_ano.text = coin?.volumeMthUsd
+        tv_coin_value_ultimo_dia.text = coin?.volumeDayUsd
+        tv_coin_value_ultimo_mes.text = coin?.volumeMthUsd
         Picasso.get().load("${coin?.iconUrl}.png").placeholder(R.drawable.ic_image).into(iv_coin)
         if (sharedPreferences.getBoolean(coin?.assetId.toString())){
             iv_favorite.visibility = View.VISIBLE
