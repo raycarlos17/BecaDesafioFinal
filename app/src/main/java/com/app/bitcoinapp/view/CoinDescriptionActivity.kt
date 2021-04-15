@@ -1,6 +1,7 @@
 package com.app.bitcoinapp.view
 
 import android.content.Context
+import android.content.Intent
 import android.opengl.Visibility
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -27,10 +28,9 @@ class CoinDescriptionActivity : AppCompatActivity(), View.OnClickListener {
         }
 
         btn_add_favorite.setOnClickListener(this)
-
-        ll_button_back.setOnClickListener {
-            backButton()
-        }
+        btn_detail.setOnClickListener(this)
+        btn_main.setOnClickListener(this)
+        ll_button_back.setOnClickListener(this)
 
         getExtras()
         setupCoin()
@@ -87,6 +87,15 @@ class CoinDescriptionActivity : AppCompatActivity(), View.OnClickListener {
             }
 
         }
+        else if (id == R.id.ll_button_back){
+            backButton()
+        }else if(id == R.id.btn_main){
+            backButton()
+        }else if(id == R.id.btn_detail){
+            val intentFavorite = Intent(this, FavoriteActivity::class.java)
+            startActivity(intentFavorite)
+        }
+
     }
 
     private fun backButton() {
