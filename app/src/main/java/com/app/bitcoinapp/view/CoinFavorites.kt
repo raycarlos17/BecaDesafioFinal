@@ -15,6 +15,7 @@ class CoinFavorites : AppCompatActivity() {
         setContentView(R.layout.coin_favorites_item)
 
         tv_date_favorites.text = getLocalDate()
+        tv_date_favorites.contentDescription = getLocalDate()
 
     }
 

@@ -47,8 +47,11 @@ class BitCoinViewHolder(
 
     fun bind(bitCoin: Coin) {
         title.text = bitCoin.name
+        title.contentDescription = "Nome da moeda ${bitCoin.name}"
         subTitle.text = bitCoin.assetId
+        title.contentDescription = "Sigla da moeda ${bitCoin.assetId}"
         value.text = "${bitCoin.priceUsd}"
+        value.contentDescription = "Valor da moeda ${bitCoin.priceUsd}"
         Picasso.get().load("${bitCoin.iconUrl}.png").placeholder(R.drawable.ic_image).into(image)
     }
 }

@@ -3,12 +3,13 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@color/primaryColor">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/cl_primary"
         android:layout_width="match_parent"
-        android:layout_height="360dp"
+        android:layout_height="0dp"
         android:background="@color/colorSecondary"
         app:layout_constraintBottom_toTopOf="@id/cl_secudary"
         app:layout_constraintLeft_toLeftOf="parent"
@@ -23,6 +24,7 @@
             android:layout_marginStart="10dp"
             android:layout_marginTop="45dp"
             android:background="@color/colorSecondary"
+            android:contentDescription="@string/botao_de_voltar_para_lista_de_moedas"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintTop_toTopOf="parent">
 
@@ -45,7 +47,7 @@
         </LinearLayout>
 
         <TextView
-            android:id="@+id/tv_title_btc"
+            android:id="@+id/tv_coin_sigla"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="40dp"
@@ -62,10 +64,10 @@
             android:layout_width="40dp"
             android:layout_height="40dp"
             android:layout_marginTop="40dp"
-            android:contentDescription="@string/iv_content_description_simbolo_da_moeda"
-            app:layout_constraintLeft_toLeftOf="@id/tv_title_btc"
-            app:layout_constraintRight_toRightOf="@id/tv_title_btc"
-            app:layout_constraintTop_toBottomOf="@id/tv_title_btc"
+            android:contentDescription="@string/iv_content_description_coin_image"
+            app:layout_constraintLeft_toLeftOf="@id/tv_coin_sigla"
+            app:layout_constraintRight_toRightOf="@id/tv_coin_sigla"
+            app:layout_constraintTop_toBottomOf="@id/tv_coin_sigla"
             tools:src="@tools:sample/avatars" />
 
         <TextView
@@ -90,6 +92,7 @@
             android:layout_height="70dp"
             android:layout_marginTop="40dp"
             android:backgroundTint="@color/colorSecondary"
+            android:contentDescription="Adicionar"
             android:text="@string/btn_adicionar"
             android:textColor="#F3F3F3"
             android:textSize="18sp"
@@ -102,7 +105,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/cl_secudary"
         android:layout_width="match_parent"
-        android:layout_height="375dp"
+        android:layout_height="0dp"
         android:background="#191818"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
@@ -113,6 +116,7 @@
             android:id="@+id/tv_volumes_negociados"
             style="@style/TextView_volumes_negociados"
             android:layout_marginTop="20dp"
+            android:contentDescription="@string/volumes_negociados"
             android:text="@string/volumes_negociados"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
@@ -187,13 +191,14 @@
 
             <LinearLayout
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:orientation="horizontal">
 
                 <LinearLayout
                     android:id="@+id/ll_menu_bottom_moedas"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_height="match_parent"
+                    android:contentDescription="@string/botao_para_lista_de_moedas"
                     android:orientation="vertical">
 
                     <ImageButton
@@ -217,7 +222,8 @@
                 <LinearLayout
                     android:id="@+id/ll_menu_bottom_adicionadas"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_height="match_parent"
+                    android:contentDescription="@string/botao_para_moedas_favoritas"
                     android:orientation="vertical">
 
                     <ImageButton
