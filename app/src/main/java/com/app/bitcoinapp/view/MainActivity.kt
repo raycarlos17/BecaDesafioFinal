@@ -28,17 +28,22 @@ class MainActivity : AppCompatActivity(), View.OnClickListener, ClickItemListene
 
         btn_main.setOnClickListener(this)
         btn_detail.setOnClickListener(this)
+        iv_search_bar.setOnClickListener(this)
 
         val date:TextView = findViewById(R.id.tv_date)
         date.text = getLocalDate()
 
+
+        initViewModel()
         mainViewObserver()
     }
 
-    private fun mainViewObserver(){
-        mainViewModel =
-            ViewModelProvider.NewInstanceFactory().create(MainViewModel::class.java)
+    private fun initViewModel(){
+        mainViewModel = ViewModelProvider.NewInstanceFactory().create(MainViewModel::class.java)
         mainViewModel.init()
+    }
+
+    private fun mainViewObserver(){
         mainViewModel.bitCoinsList.observe(this, {  list ->
             if (list != null){
                 bit_coin_list.adapter = BitCoinAdapter(list, this)
@@ -52,6 +57,24 @@ class MainActivity : AppCompatActivity(), View.OnClickListener, ClickItemListene
         })
     }
 
+    private fun searchCoins(search: String){
+        var searchedCoins: MutableList<Coin> = arrayListOf()
+
+        if(search.length > 0){
+            mainViewModel.bitCoinsList.value?.forEach {
+                if(it.name != null){
+                    if (it.name.contains(search, ignoreCase = true)){
+                        println(it.name)
+                        searchedCoins.add(it)
+                    }
+                }
+            }
+            bit_coin_list.adapter = BitCoinAdapter(searchedCoins, this)
+        }else{
+            mainViewObserver()
+        }
+    }
+
     override fun onClick(v: View) {
         val id = v.id
 
@@ -63,6 +86,10 @@ class MainActivity : AppCompatActivity(), View.OnClickListener, ClickItemListene
             }
 
             (id == R.id.btn_detail) -> {}
+
+            (id == R.id.iv_search_bar) -> {
+                searchCoins(edt_search_bar.text.toString())
+            }
         }
     }
 
