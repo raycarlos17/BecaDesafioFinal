@@ -28,6 +28,10 @@ class CoinDescriptionActivity : AppCompatActivity(), View.OnClickListener {
 
         btn_add_favorite.setOnClickListener(this)
 
+        ll_button_back.setOnClickListener {
+            backButton()
+        }
+
         getExtras()
         setupCoin()
         verifyFavorite()
@@ -50,10 +54,16 @@ class CoinDescriptionActivity : AppCompatActivity(), View.OnClickListener {
     }
 
     private fun setupCoin(){
+        tv_coin_sigla.text = coin?.assetId
+        tv_coin_sigla.contentDescription = "Sigla da moeda ${coin?.assetId}"
         tv_coin_value.text = coin?.priceUsd
+        tv_coin_value.contentDescription = "Valor da moeda ${coin?.priceUsd}"
         tv_coin_value_ultima_hora.text = coin?.volumeHourUsd
-        tv_coin_value_ultimo_mes.text = coin?.volumeDayUsd
-        tv_coin_value_ultimo_ano.text = coin?.volumeMthUsd
+        tv_coin_value_ultima_hora.contentDescription = "Valor da última hora ${coin?.volumeHourUsd}"
+        tv_coin_value_ultimo_dia.text = coin?.volumeDayUsd
+        tv_coin_value_ultimo_dia.contentDescription = "Valor do último dia ${coin?.volumeDayUsd}"
+        tv_coin_value_ultimo_mes.text = coin?.volumeMthUsd
+        tv_coin_value_ultimo_mes.contentDescription = "Valor do último mês ${coin?.volumeMthUsd}"
         Picasso.get().load("${coin?.iconUrl}.png").placeholder(R.drawable.ic_image).into(iv_coin)
         if (sharedPreferences.getBoolean(coin?.assetId.toString())){
             iv_favorite.visibility = View.VISIBLE
@@ -77,5 +87,9 @@ class CoinDescriptionActivity : AppCompatActivity(), View.OnClickListener {
             }
 
         }
+    }
+
+    private fun backButton() {
+        finish()
     }
 }
