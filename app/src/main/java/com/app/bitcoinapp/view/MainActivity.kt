@@ -68,7 +68,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener, ClickItemListene
                 }
             }
         }
-        bit_coin_list.adapter = BitCoinAdapter(searchedCoins, this)
+        bit_coin_list.adapter = BitCoinAdapter(this, searchedCoins, this)
     }
 
     private fun initSearch(){
