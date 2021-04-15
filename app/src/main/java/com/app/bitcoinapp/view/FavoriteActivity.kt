@@ -43,6 +43,7 @@ class FavoriteActivity : AppCompatActivity(), View.OnClickListener {
         mainViewModel =
             ViewModelProvider.NewInstanceFactory().create(MainViewModel::class.java)
         mainViewModel.init()
+
         mainViewModel.bitCoinsList.observe(this, { list ->
             if (list != null) {
                 gv_list_coin_favorite.adapter = FavoritesAdapter(this, createList(list, this))
