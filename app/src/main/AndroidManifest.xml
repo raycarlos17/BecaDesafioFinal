@@ -14,7 +14,6 @@
         android:theme="@style/Theme.BitCoinApp">
         <activity android:name=".view.FavoriteActivity"/>
         <activity android:name=".view.CoinDescriptionActivity"/>
-        <activity android:name=".view.CoinDescription"/>
         <activity android:name=".view.MainActivity"/>
         <activity android:name=".view.SplashScreenActivity">
             <intent-filter>
@@ -23,6 +22,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
     </application>
 
 </manifest>
