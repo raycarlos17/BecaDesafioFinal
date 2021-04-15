@@ -7,14 +7,18 @@
     <string name="volumes_negociados">volumes negociados</string>
     <string name="ltima_hora">última hora</string>
     <string name="ultimo_mes">último mês</string>
-    <string name="ultimo_ano">último ano</string>
     <string name="coin_value_hint_zero">$ 000.000.00</string>
-    <string name="iv_content_description_simbolo_da_moeda">Simbolo da moeda</string>
-    <string name="btn_voltar"><![CDATA[< voltar]]></string>
+    <string name="iv_content_description_coin_image">Imagem da moeda</string>
     <string name="date_example">4 jan 2021</string>
     <string name="tv_btn_voltar">Voltar</string>
     <string name="ll_tv_menu_bottom_moedas">Moedas</string>
     <string name="ll_tv_menu_bottom_adicionadas">Adicionadas</string>
     <string name="tv_title_bitcoin">Bitcoin</string>
     <string name="btn_add_favorite_delete">DELETE</string>
+    <string name="ultimo_dia">último dia</string>
+    <string name="barra_de_pesquisar_moeda">Barra de pesquisar moeda</string>
+    <string name="botao_para_lista_de_moedas">botão para lista de moedas</string>
+    <string name="botao_para_moedas_favoritas">botão para moedas favoritas</string>
+    <string name="lista_de_moedas">Lista de moedas</string>
+    <string name="botao_de_voltar_para_lista_de_moedas">Botão de voltar para lista de moedas</string>
 </resources>

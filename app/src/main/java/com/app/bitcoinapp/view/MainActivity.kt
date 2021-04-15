@@ -13,6 +13,7 @@ import com.app.bitcoinapp.model.Coin
 import com.app.bitcoinapp.model.helper.ClickItemListener
 import com.app.bitcoinapp.viewmodel.MainViewModel
 import kotlinx.android.synthetic.main.activity_main.*
+import java.text.SimpleDateFormat
 import java.time.LocalDateTime
 import java.time.format.DateTimeFormatter
 
@@ -31,6 +32,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener, ClickItemListene
 
         val date:TextView = findViewById(R.id.tv_date)
         date.text = getLocalDate()
+        date.contentDescription = getLocalDate()
 
         mainViewObserver()
     }
@@ -77,6 +79,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener, ClickItemListene
 
     override fun ClickItemList(coin: Coin) {
         val intent = Intent(this, CoinDescriptionActivity::class.java)
+        val intent = Intent(this, CoinDescription::class.java)
         intent.putExtra("EXTRA_COIN", coin)
         startActivity(intent)
     }

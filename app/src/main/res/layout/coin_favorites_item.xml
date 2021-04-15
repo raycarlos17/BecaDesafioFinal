@@ -61,6 +61,7 @@
         android:id="@+id/iv_favorite_icon"
         android:layout_width="30dp"
         android:layout_height="30dp"
+        android:contentDescription="@string/iv_content_description_coin_image"
         app:layout_constraintRight_toRightOf="@id/cl_coin_favorites_externo"
         app:layout_constraintTop_toTopOf="@id/cl_coin_favorites_externo"
         tools:src="@tools:sample/avatars" />
