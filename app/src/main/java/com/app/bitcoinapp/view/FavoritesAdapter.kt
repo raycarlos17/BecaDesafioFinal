@@ -42,8 +42,6 @@ class FavoritesAdapter(private var context: Context, private var list: List<Coin
         parent: ViewGroup?
     ): View? {
 
-        val sharedPreferences = SharedPreferences(context)
-
         var convertView = convertView
 
         if (layoutInflater == null) {
@@ -61,14 +59,13 @@ class FavoritesAdapter(private var context: Context, private var list: List<Coin
 
         val list = getItem(position)
 
-        if (sharedPreferences.getBoolean(list.get(0))){
-            title?.text = list.get(0)
-            subTitle?.text = list.get(1)
-            value?.text = list.get(2)
-            Picasso.get().load("${list.get(3)}.png")
-                .placeholder(R.drawable.ic_image)
-                .into(image)
-        }
+
+        title?.text = list.get(0)
+        subTitle?.text = list.get(1)
+        value?.text = list.get(2)
+        Picasso.get().load("${list.get(3)}.png")
+            .placeholder(R.drawable.ic_image)
+            .into(image)
 
         return convertView
     }

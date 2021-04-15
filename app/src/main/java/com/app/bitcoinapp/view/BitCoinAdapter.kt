@@ -65,5 +65,10 @@ class BitCoinViewHolder(
         if (bitCoin.favorite){
             Picasso.get().load(R.drawable.ic_baseline_star_24).into(imageFavorite)
         }
+        if (sharedPreferences.getBoolean(bitCoin.assetId)){
+            imageFavorite.visibility = View.VISIBLE
+        }else if(!sharedPreferences.getBoolean(bitCoin.assetId)){
+            imageFavorite.visibility = View.GONE
+        }
     }
 }

@@ -39,6 +39,7 @@
             android:layout_width="18dp"
             android:layout_height="18dp"
             android:layout_marginStart="8dp"
+            android:src="@drawable/ic_baseline_star_24"
             app:layout_constraintLeft_toRightOf="@+id/item_title"
             app:layout_constraintTop_toTopOf="@+id/item_title"/>
 
