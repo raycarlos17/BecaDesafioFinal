@@ -15,7 +15,7 @@ import kotlinx.android.synthetic.main.activity_coin_description.*
 class CoinDescriptionActivity : AppCompatActivity(), View.OnClickListener {
 
     private var coin: Coin? = null
-    private lateinit var sharedPreferences:SharedPreferences
+    private lateinit var sharedPreferences: SharedPreferences
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -39,21 +39,21 @@ class CoinDescriptionActivity : AppCompatActivity(), View.OnClickListener {
 
     private fun verifyFavorite() {
         val statusFavorite = sharedPreferences.getBoolean(coin?.assetId.toString())
-        if(statusFavorite){
+        if (statusFavorite) {
             btn_add_favorite.text = getString(R.string.btn_add_favorite_delete)
             coin?.favorite = false
-        }else if(!statusFavorite){
+        } else if (!statusFavorite) {
             btn_add_favorite.text = getString(R.string.btn_adicionar)
             coin?.favorite = true
         }
     }
 
 
-    private fun getExtras(){
+    private fun getExtras() {
         coin = intent.getParcelableExtra("EXTRA_COIN")
     }
 
-    private fun setupCoin(){
+    private fun setupCoin() {
         tv_coin_sigla.text = coin?.assetId
         tv_coin_sigla.contentDescription = "Sigla da moeda ${coin?.assetId}"
 
@@ -71,42 +71,27 @@ class CoinDescriptionActivity : AppCompatActivity(), View.OnClickListener {
 
         Picasso.get().load("${coin?.iconUrl}.png").placeholder(R.drawable.ic_image).into(iv_coin)
 
-        if (sharedPreferences.getBoolean(coin?.assetId.toString())){
+        if (sharedPreferences.getBoolean(coin?.assetId.toString())) {
             iv_favorite.visibility = View.VISIBLE
-        }else if (!sharedPreferences.getBoolean(coin?.assetId.toString())){
+        } else if (!sharedPreferences.getBoolean(coin?.assetId.toString())) {
             iv_favorite.visibility = View.GONE
         }
     }
 
     override fun onClick(v: View) {
         val id = v.id
-<<<<<<< HEAD
         when (id) {
             R.id.btn_add_favorite -> {
                 val statusBtn = btn_add_favorite.text.toString()
-                if(statusBtn == "ADICIONAR"){
-                    sharedPreferences.storeBoolean(coin?.assetId.toString(),true)
+                if (statusBtn == "ADICIONAR") {
+                    sharedPreferences.storeBoolean(coin?.assetId.toString(), true)
                     verifyFavorite()
                     setupCoin()
-                }else if(statusBtn == "DELETE" ){
-                    sharedPreferences.storeBoolean(coin?.assetId.toString(),false)
+                } else if (statusBtn == "DELETE") {
+                    sharedPreferences.storeBoolean(coin?.assetId.toString(), false)
                     verifyFavorite()
                     setupCoin()
                 }
-=======
-        if (id == R.id.btn_add_favorite){
-            val statusBtn = btn_add_favorite.text.toString()
-            if(statusBtn == "ADICIONAR"){
-                sharedPreferences.storeBoolean(coin?.assetId.toString(),true)
-                verifyFavorite()
-                setupCoin()
-            }else if(statusBtn == "REMOVER" ){
-                sharedPreferences.storeBoolean(coin?.assetId.toString(),false)
-                verifyFavorite()
-                setupCoin()
-            }
->>>>>>> 66d8641fa8f81d18c1447784c25a76423ce65279
-
             }
             R.id.ll_button_back -> {
                 backButton()
@@ -119,7 +104,6 @@ class CoinDescriptionActivity : AppCompatActivity(), View.OnClickListener {
                 startActivity(intentFavorite)
             }
         }
-
     }
 
     private fun backButton() {
