@@ -73,6 +73,7 @@ class FavoritesAdapter(
 
         val list: List<Coin> = getItem(position)
 
+<<<<<<< HEAD
         convertView?.setOnClickListener {
             listener.ClickItemList(list[0])
         }
@@ -81,6 +82,18 @@ class FavoritesAdapter(
         subTitle?.text = list[0].assetId
         value?.text = list[0].priceUsd
         Picasso.get().load("${list[0].iconUrl}.png")
+=======
+        title?.text = list[0]
+        title?.contentDescription = "Nome da moeda ${list[0]}"
+
+        subTitle?.text = list[1]
+        subTitle?.contentDescription = "Sigla da moeda ${list[1]}"
+
+        value?.text = list[2]
+        value?.contentDescription = "Valor da moeda ${list[2]}"
+
+        Picasso.get().load("${list[3]}.png")
+>>>>>>> 66d8641fa8f81d18c1447784c25a76423ce65279
             .placeholder(R.drawable.ic_image)
             .into(image)
 
