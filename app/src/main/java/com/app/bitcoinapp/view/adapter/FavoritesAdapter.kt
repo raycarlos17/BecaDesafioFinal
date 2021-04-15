@@ -59,10 +59,16 @@ class FavoritesAdapter(private var context: Context, private var list: List<Coin
         val list = getItem(position)
 
 
-        title?.text = list.get(0)
+        title?.text = list[0]
+        title?.contentDescription = "Nome da moeda ${list[0]}"
+
         subTitle?.text = list.get(1)
-        value?.text = list.get(2)
-        Picasso.get().load("${list.get(3)}.png")
+        subTitle?.contentDescription = "Sigla da moeda ${list[1]}"
+
+        value?.text = list[2]
+        value?.contentDescription = "Valor da moeda ${list[2]}"
+
+        Picasso.get().load("${list[3]}.png")
             .placeholder(R.drawable.ic_image)
             .into(image)
 
