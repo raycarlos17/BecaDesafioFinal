@@ -4,12 +4,14 @@ import android.content.Context
 import android.os.Bundle
 import android.os.PersistableBundle
 import android.view.View
+import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.ActionBar
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
 import com.app.bitcoinapp.R
 import com.app.bitcoinapp.model.Coin
+import com.app.bitcoinapp.model.helper.SetDate
 import com.app.bitcoinapp.model.helper.SharedPreferences
 import com.app.bitcoinapp.viewmodel.MainViewModel
 import kotlinx.android.synthetic.main.activity_main.*
@@ -21,12 +23,17 @@ class FavoriteActivity : AppCompatActivity(), View.OnClickListener {
 
     private lateinit var mainViewModel: MainViewModel
     private lateinit var sharedPreferences: SharedPreferences
+    private val setDate = SetDate()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.coin_favorites_recyclerview)
         supportActionBar?.displayOptions = ActionBar.DISPLAY_SHOW_CUSTOM
         supportActionBar?.setCustomView(R.layout.abs_main_item)
+
+        val date:TextView = findViewById(R.id.tv_date_favorites)
+        date.text = setDate.getLocalDate()
+        date.contentDescription = setDate.getLocalDate()
 
         btn_main.setOnClickListener(this)
 

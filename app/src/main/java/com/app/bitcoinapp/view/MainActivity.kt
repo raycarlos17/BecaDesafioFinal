@@ -12,6 +12,7 @@ import androidx.lifecycle.ViewModelProvider
 import com.app.bitcoinapp.R
 import com.app.bitcoinapp.model.Coin
 import com.app.bitcoinapp.model.helper.ClickItemListener
+import com.app.bitcoinapp.model.helper.SetDate
 import com.app.bitcoinapp.viewmodel.MainViewModel
 import kotlinx.android.synthetic.main.activity_main.*
 import java.text.SimpleDateFormat
@@ -21,6 +22,7 @@ import java.time.format.DateTimeFormatter
 class MainActivity : AppCompatActivity(), View.OnClickListener, ClickItemListener {
 
     private lateinit var mainViewModel: MainViewModel
+    private val setDate = SetDate()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -28,12 +30,14 @@ class MainActivity : AppCompatActivity(), View.OnClickListener, ClickItemListene
         supportActionBar?.displayOptions = ActionBar.DISPLAY_SHOW_CUSTOM
         supportActionBar?.setCustomView(R.layout.abs_main_item)
 
+        val date: TextView = findViewById(R.id.tv_date)
+        date.text = setDate.getLocalDate()
+        date.contentDescription = setDate.getLocalDate()
+
         btn_main.setOnClickListener(this)
         btn_detail.setOnClickListener(this)
 
-        val date:TextView = findViewById(R.id.tv_date)
-        date.text = getLocalDate()
-        date.contentDescription = getLocalDate()
+
 
         initViewModel()
         mainViewObserver()
@@ -103,11 +107,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener, ClickItemListene
         }
     }
 
-    private fun getLocalDate(): String{
-        val now = LocalDateTime.now()
-        val formatter = DateTimeFormatter.ofPattern("dd MMM yyyy")
-        return now.format(formatter).toString()
-    }
+
 
     override fun ClickItemList(coin: Coin) {
         val intent = Intent(this, CoinDescriptionActivity::class.java)
