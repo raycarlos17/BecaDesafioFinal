@@ -37,15 +37,17 @@ class FavoriteActivity : AppCompatActivity(), View.OnClickListener, ClickItemLis
 
         btn_main.setOnClickListener(this)
 
+        initViewModel()
         observerFavorites()
     }
 
-
-    private fun observerFavorites() {
+    private fun initViewModel(){
         mainViewModel =
             ViewModelProvider.NewInstanceFactory().create(MainViewModel::class.java)
         mainViewModel.init()
+    }
 
+    private fun observerFavorites() {
         mainViewModel.bitCoinsList.observe(this, { list ->
             if (list != null) {
                 gv_list_coin_favorite.adapter =
@@ -85,5 +87,10 @@ class FavoriteActivity : AppCompatActivity(), View.OnClickListener, ClickItemLis
         val intent = Intent(this@FavoriteActivity,CoinDescriptionActivity::class.java)
         intent.putExtra("EXTRA_COIN", coin)
         startActivity(intent)
+    }
+
+    override fun onResume() {
+        super.onResume()
+        observerFavorites()
     }
 }
