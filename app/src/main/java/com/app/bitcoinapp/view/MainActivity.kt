@@ -35,8 +35,6 @@ class MainActivity : AppCompatActivity(), View.OnClickListener, ClickItemListene
         btn_main.setOnClickListener(this)
         btn_detail.setOnClickListener(this)
 
-
-
         initViewModel()
         mainViewObserver()
         initSearch()
@@ -105,11 +103,14 @@ class MainActivity : AppCompatActivity(), View.OnClickListener, ClickItemListene
         }
     }
 
-
-
     override fun ClickItemList(coin: Coin) {
         val intent = Intent(this, CoinDescriptionActivity::class.java)
         intent.putExtra("EXTRA_COIN", coin)
         startActivity(intent)
+    }
+
+    override fun onResume() {
+        super.onResume()
+        mainViewObserver()
     }
 }
