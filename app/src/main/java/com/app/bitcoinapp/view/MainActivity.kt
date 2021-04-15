@@ -4,6 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import android.widget.SearchView
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.ActionBar
@@ -28,7 +29,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener, ClickItemListene
 
         btn_main.setOnClickListener(this)
         btn_detail.setOnClickListener(this)
-        iv_search_bar.setOnClickListener(this)
+
 
         val date:TextView = findViewById(R.id.tv_date)
         date.text = getLocalDate()
@@ -36,6 +37,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener, ClickItemListene
 
         initViewModel()
         mainViewObserver()
+        initSearch()
     }
 
     private fun initViewModel(){
@@ -59,20 +61,29 @@ class MainActivity : AppCompatActivity(), View.OnClickListener, ClickItemListene
 
     private fun searchCoins(search: String){
         var searchedCoins: MutableList<Coin> = arrayListOf()
-
-        if(search.length > 0){
-            mainViewModel.bitCoinsList.value?.forEach {
-                if(it.name != null){
-                    if (it.name.contains(search, ignoreCase = true)){
-                        println(it.name)
-                        searchedCoins.add(it)
-                    }
+        mainViewModel.bitCoinsList.value?.forEach{
+            if(it.name != null){
+                if(it.name.contains(search, ignoreCase = true)){
+                    searchedCoins.add(it)
                 }
             }
-            bit_coin_list.adapter = BitCoinAdapter(searchedCoins, this)
-        }else{
-            mainViewObserver()
         }
+        bit_coin_list.adapter = BitCoinAdapter(searchedCoins, this)
+    }
+
+    private fun initSearch(){
+
+        sv_search_bar.setOnQueryTextListener(object: SearchView.OnQueryTextListener{
+            override fun onQueryTextSubmit(query: String): Boolean {
+                searchCoins(query)
+                return false
+            }
+
+            override fun onQueryTextChange(newText: String): Boolean {
+                searchCoins(newText)
+                return false
+            }
+        })
     }
 
     override fun onClick(v: View) {
@@ -86,10 +97,6 @@ class MainActivity : AppCompatActivity(), View.OnClickListener, ClickItemListene
             }
 
             (id == R.id.btn_detail) -> {}
-
-            (id == R.id.iv_search_bar) -> {
-                searchCoins(edt_search_bar.text.toString())
-            }
         }
     }
 

@@ -33,28 +33,13 @@
         android:padding="5dp"
         app:cardCornerRadius="10dp" >
 
-        <LinearLayout
-            android:layout_height="match_parent"
+        <SearchView
+            android:id="@+id/sv_search_bar"
             android:layout_width="match_parent"
-            android:gravity="center">
-
-            <ImageView
-                android:id="@+id/iv_search_bar"
-                android:layout_width="34dp"
-                android:layout_height="22dp"
-                android:src="@android:drawable/ic_search_category_default" />
-
-            <androidx.appcompat.widget.AppCompatEditText
-                android:id="@+id/edt_search_bar"
-                android:layout_width="match_parent"
-                android:layout_height="34dp"
-                android:textColor="@color/colorPrimaryLight"
-                android:background="@color/colorPrimaryVariant"
-                android:hint="@string/hint_search_bar"
-                android:inputType="text"
-                android:textColorHint="@color/colorPrimaryLight" />
-
-        </LinearLayout>
+            android:layout_height="34dp"
+            android:iconifiedByDefault="false"
+            android:queryHint="@string/hint_search_bar"
+            android:inputType="text" />
 
     </androidx.cardview.widget.CardView>
 
@@ -69,10 +54,10 @@
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/bit_coin_list"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
         android:layout_marginTop="26dp"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/bottomNavigationView"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
