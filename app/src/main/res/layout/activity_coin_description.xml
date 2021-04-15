@@ -23,7 +23,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
             android:padding="8dp"
-            android:layout_marginTop="45dp"
+            android:layout_marginTop="35dp"
             android:background="@color/colorSecondary"
             android:contentDescription="@string/botao_de_voltar_para_lista_de_moedas"
             app:layout_constraintLeft_toLeftOf="parent"

@@ -58,11 +58,10 @@ class FavoritesAdapter(private var context: Context, private var list: List<Coin
 
         val list = getItem(position)
 
-
         title?.text = list[0]
         title?.contentDescription = "Nome da moeda ${list[0]}"
 
-        subTitle?.text = list.get(1)
+        subTitle?.text = list[1]
         subTitle?.contentDescription = "Sigla da moeda ${list[1]}"
 
         value?.text = list[2]
