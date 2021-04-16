@@ -232,6 +232,7 @@
                     android:src="@drawable/ic_baseline_attach_money_24" />
 
                 <TextView
+                    android:id="@+id/tv_btn_main"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:gravity="bottom|center"
@@ -256,6 +257,7 @@
                     android:src="@drawable/ic_baseline_star_24" />
 
                 <TextView
+                    android:id="@+id/tv_btn_detail"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:gravity="bottom|center"

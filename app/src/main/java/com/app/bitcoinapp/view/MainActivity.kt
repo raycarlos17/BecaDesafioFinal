@@ -4,6 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import android.widget.ImageButton
 import android.widget.SearchView
 import android.widget.TextView
 import android.widget.Toast
@@ -15,7 +16,10 @@ import com.app.bitcoinapp.model.helper.ClickItemListener
 import com.app.bitcoinapp.model.helper.SetDate
 import com.app.bitcoinapp.view.adapter.BitCoinAdapter
 import com.app.bitcoinapp.viewmodel.MainViewModel
+import kotlinx.android.synthetic.main.activity_coin_description.*
 import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.main.activity_main.btn_detail
+import kotlinx.android.synthetic.main.activity_main.btn_main
 
 class MainActivity : AppCompatActivity(), View.OnClickListener, ClickItemListener {
 
