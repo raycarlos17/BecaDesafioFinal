@@ -17,8 +17,9 @@ import com.app.bitcoinapp.model.helper.SetDate
 import com.app.bitcoinapp.view.adapter.BitCoinAdapter
 import com.app.bitcoinapp.viewmodel.MainViewModel
 import kotlinx.android.synthetic.main.activity_main.*
-import kotlinx.android.synthetic.main.activity_main.btn_detail
-import kotlinx.android.synthetic.main.activity_main.btn_main
+import kotlinx.android.synthetic.main.bottom_navigation_view_component.btn_detail
+import kotlinx.android.synthetic.main.bottom_navigation_view_component.btn_main
+import kotlinx.android.synthetic.main.bottom_navigation_view_component.tv_btn_main
 
 class MainActivity : AppCompatActivity(), View.OnClickListener, ClickItemListener {
 

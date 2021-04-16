@@ -1,8 +1,6 @@
 package com.app.bitcoinapp.view
 
-import android.content.Context
 import android.content.Intent
-import android.opengl.Visibility
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
@@ -10,6 +8,8 @@ import com.app.bitcoinapp.R
 import com.app.bitcoinapp.model.Coin
 import com.app.bitcoinapp.model.helper.SharedPreferences
 import com.squareup.picasso.Picasso
+import kotlinx.android.synthetic.main.bottom_navigation_view_component.btn_detail
+import kotlinx.android.synthetic.main.bottom_navigation_view_component.btn_main
 import kotlinx.android.synthetic.main.activity_coin_description.*
 
 class CoinDescriptionActivity : AppCompatActivity(), View.OnClickListener {
@@ -99,6 +99,8 @@ class CoinDescriptionActivity : AppCompatActivity(), View.OnClickListener {
                 backButton()
             }
             R.id.btn_main -> {
+                val intent = Intent(this, MainActivity::class.java)
+                startActivity(intent)
                 backButton()
             }
             R.id.btn_detail -> {

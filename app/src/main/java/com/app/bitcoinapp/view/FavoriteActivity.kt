@@ -17,7 +17,9 @@ import com.app.bitcoinapp.model.helper.SetDate
 import com.app.bitcoinapp.model.helper.SharedPreferences
 import com.app.bitcoinapp.view.adapter.FavoritesAdapter
 import com.app.bitcoinapp.viewmodel.MainViewModel
-import kotlinx.android.synthetic.main.activity_main.btn_main
+import kotlinx.android.synthetic.main.bottom_navigation_view_component.btn_detail
+import kotlinx.android.synthetic.main.bottom_navigation_view_component.tv_btn_detail
+import kotlinx.android.synthetic.main.bottom_navigation_view_component.btn_main
 import kotlinx.android.synthetic.main.coin_favorites_recyclerview.*
 
 class FavoriteActivity : AppCompatActivity(), View.OnClickListener, ClickItemListener {
@@ -33,7 +35,7 @@ class FavoriteActivity : AppCompatActivity(), View.OnClickListener, ClickItemLis
         supportActionBar?.displayOptions = ActionBar.DISPLAY_SHOW_CUSTOM
         supportActionBar?.setCustomView(R.layout.abs_main_item)
 
-        val date:TextView = findViewById(R.id.tv_date_favorites)
+        val date:TextView = findViewById(R.id.tv_date)
         date.text = setDate.getLocalDate()
         date.contentDescription = setDate.getLocalDate()
         bottomNavigation.colorsNavigation(btn_detail, tv_btn_detail, "#9a9b54")
@@ -67,8 +69,9 @@ class FavoriteActivity : AppCompatActivity(), View.OnClickListener, ClickItemLis
 
     override fun onClick(v: View) {
         val id = v.id
-
+        val intent = Intent(this, MainActivity::class.java)
         if (id == R.id.btn_main) {
+            startActivity(intent)
             finish()
         }
     }
