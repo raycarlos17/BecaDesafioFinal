@@ -1,7 +1,6 @@
 package com.app.bitcoinapp.view
 
 import android.content.Intent
-import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
@@ -12,6 +11,7 @@ import androidx.appcompat.app.ActionBar
 import androidx.lifecycle.ViewModelProvider
 import com.app.bitcoinapp.R
 import com.app.bitcoinapp.model.Coin
+import com.app.bitcoinapp.model.helper.BottomNavigation
 import com.app.bitcoinapp.model.helper.ClickItemListener
 import com.app.bitcoinapp.model.helper.SetDate
 import com.app.bitcoinapp.view.adapter.BitCoinAdapter
@@ -24,6 +24,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener, ClickItemListene
 
     private lateinit var mainViewModel: MainViewModel
     private val setDate = SetDate()
+    private val bottomNavigation = BottomNavigation()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -34,12 +35,11 @@ class MainActivity : AppCompatActivity(), View.OnClickListener, ClickItemListene
         val date: TextView = findViewById(R.id.tv_date)
         date.text = setDate.getLocalDate()
         date.contentDescription = setDate.getLocalDate()
+        bottomNavigation.colorsNavigation(btn_main, tv_btn_main, "#9a9b54")
 
         btn_main.setOnClickListener(this)
         btn_detail.setOnClickListener(this)
 
-
-        bottomColors()
         initViewModel()
         mainViewObserver()
         initSearch()
@@ -119,8 +119,4 @@ class MainActivity : AppCompatActivity(), View.OnClickListener, ClickItemListene
         mainViewObserver()
     }
 
-    private fun bottomColors() {
-        btn_main.setColorFilter(Color.parseColor("#9a9b54"))
-        tv_btn_main.setTextColor(Color.parseColor("#9a9b54"))
-    }
 }
