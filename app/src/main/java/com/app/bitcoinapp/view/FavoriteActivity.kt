@@ -8,6 +8,7 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.ActionBar
 import androidx.appcompat.app.AppCompatActivity
+import androidx.fragment.app.DialogFragment
 import androidx.lifecycle.ViewModelProvider
 import com.app.bitcoinapp.R
 import com.app.bitcoinapp.model.Coin
@@ -22,7 +23,7 @@ import kotlinx.android.synthetic.main.bottom_navigation_view_component.tv_btn_de
 import kotlinx.android.synthetic.main.bottom_navigation_view_component.btn_main
 import kotlinx.android.synthetic.main.coin_favorites_recyclerview.*
 
-class FavoriteActivity : AppCompatActivity(), View.OnClickListener, ClickItemListener {
+class FavoriteActivity : AppCompatActivity(), View.OnClickListener, ClickItemListener, AlertDialog.AlertDialogListener {
 
     private lateinit var mainViewModel: MainViewModel
     private lateinit var sharedPreferences: SharedPreferences
@@ -49,7 +50,7 @@ class FavoriteActivity : AppCompatActivity(), View.OnClickListener, ClickItemLis
     private fun initViewModel(){
         mainViewModel =
             ViewModelProvider.NewInstanceFactory().create(MainViewModel::class.java)
-        mainViewModel.init()
+        mainViewModel.init(this.supportFragmentManager)
     }
 
     private fun observerFavorites() {
@@ -97,6 +98,11 @@ class FavoriteActivity : AppCompatActivity(), View.OnClickListener, ClickItemLis
 
     override fun onResume() {
         super.onResume()
+        observerFavorites()
+    }
+
+    override fun onDialogPositiveClick(dialog: DialogFragment) {
+        initViewModel()
         observerFavorites()
     }
 }

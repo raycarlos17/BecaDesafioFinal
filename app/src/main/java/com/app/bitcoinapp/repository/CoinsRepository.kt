@@ -13,14 +13,12 @@ class CoinsRepository(private val coinRestApiTask: CoinRestApiTask) {
     }
 
 
-    fun getAllCoins(onSuccess: (List<Coin>) -> Unit, onError: (Int?) -> Unit){
+    fun getAllCoins(onSuccess: (List<Coin>) -> Unit, onError: (Int?, String?) -> Unit){
         val request = coinRestApiTask.retrofitApi().getAllAssets()
-        println("getAllCoins")
 
         request.enqueue(object: Callback<List<Coin>>{
 
             override fun onResponse(call: Call<List<Coin>>, response: Response<List<Coin>>) {
-                println("onResponse")
                 val responseCode = response.code()
 
 
@@ -28,12 +26,13 @@ class CoinsRepository(private val coinRestApiTask: CoinRestApiTask) {
                     val coinsList = response.body()!!
                     onSuccess.invoke(coinsList)
                 }else{
-                    onError.invoke(responseCode)
+                    onError.invoke(responseCode, null)
                 }
             }
 
             override fun onFailure(call: Call<List<Coin>>, t: Throwable) {
-//                Toast.makeText(context, t.message, Toast.LENGTH_SHORT).show()
+
+                onError.invoke(null, t.toString())
             }
         })
     }
