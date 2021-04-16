@@ -2,7 +2,6 @@ package com.app.bitcoinapp.view
 
 import android.content.Context
 import android.content.Intent
-import android.graphics.Color
 import android.os.Bundle
 import android.view.View
 import android.widget.TextView
@@ -12,6 +11,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
 import com.app.bitcoinapp.R
 import com.app.bitcoinapp.model.Coin
+import com.app.bitcoinapp.model.helper.BottomNavigation
 import com.app.bitcoinapp.model.helper.ClickItemListener
 import com.app.bitcoinapp.model.helper.SetDate
 import com.app.bitcoinapp.model.helper.SharedPreferences
@@ -25,6 +25,7 @@ class FavoriteActivity : AppCompatActivity(), View.OnClickListener, ClickItemLis
     private lateinit var mainViewModel: MainViewModel
     private lateinit var sharedPreferences: SharedPreferences
     private val setDate = SetDate()
+    private val bottomNavigation = BottomNavigation()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -35,11 +36,10 @@ class FavoriteActivity : AppCompatActivity(), View.OnClickListener, ClickItemLis
         val date:TextView = findViewById(R.id.tv_date_favorites)
         date.text = setDate.getLocalDate()
         date.contentDescription = setDate.getLocalDate()
-
+        bottomNavigation.colorsNavigation(btn_detail, tv_btn_detail, "#9a9b54")
 
         btn_main.setOnClickListener(this)
 
-        bottomColors()
         initViewModel()
         observerFavorites()
     }
@@ -95,10 +95,5 @@ class FavoriteActivity : AppCompatActivity(), View.OnClickListener, ClickItemLis
     override fun onResume() {
         super.onResume()
         observerFavorites()
-    }
-
-    private fun bottomColors() {
-        btn_detail.setColorFilter(Color.parseColor("#9a9b54"))
-        tv_btn_detail.setTextColor(Color.parseColor("#9a9b54"))
     }
 }
