@@ -1,11 +1,8 @@
 package com.app.bitcoinapp.viewmodel
 
-import android.app.Application
-import android.app.Dialog
 import android.util.Log
 import androidx.fragment.app.DialogFragment
 import androidx.fragment.app.FragmentManager
-import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -13,7 +10,6 @@ import com.app.bitcoinapp.model.Coin
 import com.app.bitcoinapp.model.api.CoinRestApiTask
 import com.app.bitcoinapp.repository.CoinsRepository
 import com.app.bitcoinapp.view.AlertDialog
-import java.lang.StringBuilder
 import java.text.NumberFormat
 import java.util.*
 
@@ -44,8 +40,8 @@ class MainViewModel : ViewModel() {
         get() = _bitCoinsList
 
     fun init(fragmentManager: FragmentManager) {
-        getAllCoins()
         supportFragmentManager = fragmentManager
+        getAllCoins()
     }
 
     private fun getAllCoins(){
@@ -77,7 +73,7 @@ class MainViewModel : ViewModel() {
             else -> {alert = AlertDialog("Ops tivemos um problema, tente novamente mais tarde!")}
         }
 
-        alert?.show(supportFragmentManager, "Error")
+        alert.show(supportFragmentManager, "Error")
         Log.d("MainViewModel: ", "Error code $code")
     }
 

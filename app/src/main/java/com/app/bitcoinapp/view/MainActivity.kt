@@ -1,5 +1,6 @@
 package com.app.bitcoinapp.view
 
+import android.content.Context
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -8,6 +9,7 @@ import android.widget.SearchView
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.ActionBar
+import androidx.fragment.app.DialogFragment
 import androidx.lifecycle.ViewModelProvider
 import com.app.bitcoinapp.R
 import com.app.bitcoinapp.model.Coin
@@ -20,7 +22,7 @@ import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.activity_main.btn_detail
 import kotlinx.android.synthetic.main.activity_main.btn_main
 
-class MainActivity : AppCompatActivity(), View.OnClickListener, ClickItemListener {
+class MainActivity : AppCompatActivity(), View.OnClickListener, ClickItemListener, AlertDialog.AlertDialogListener {
 
     private lateinit var mainViewModel: MainViewModel
     private val setDate = SetDate()
@@ -116,6 +118,11 @@ class MainActivity : AppCompatActivity(), View.OnClickListener, ClickItemListene
 
     override fun onResume() {
         super.onResume()
+        mainViewObserver()
+    }
+
+    override fun onDialogPositiveClick(dialog: DialogFragment) {
+        initViewModel()
         mainViewObserver()
     }
 

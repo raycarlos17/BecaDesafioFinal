@@ -31,8 +31,8 @@ class CoinsRepository(private val coinRestApiTask: CoinRestApiTask) {
             }
 
             override fun onFailure(call: Call<List<Coin>>, t: Throwable) {
+
                 onError.invoke(null, t.toString())
-//                Toast.makeText(context, t.message, Toast.LENGTH_SHORT).show()
             }
         })
     }
