@@ -47,7 +47,7 @@ class FavoriteActivity : AppCompatActivity(), View.OnClickListener, ClickItemLis
     private fun initViewModel(){
         mainViewModel =
             ViewModelProvider.NewInstanceFactory().create(MainViewModel::class.java)
-        mainViewModel.init()
+        mainViewModel.init(this.supportFragmentManager)
     }
 
     private fun observerFavorites() {

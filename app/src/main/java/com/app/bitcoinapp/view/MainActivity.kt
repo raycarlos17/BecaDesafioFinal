@@ -47,7 +47,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener, ClickItemListene
 
     private fun initViewModel(){
         mainViewModel = ViewModelProvider.NewInstanceFactory().create(MainViewModel::class.java)
-        mainViewModel.init()
+        mainViewModel.init(this.supportFragmentManager)
     }
 
     private fun mainViewObserver(){
