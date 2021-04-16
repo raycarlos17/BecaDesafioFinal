@@ -2,6 +2,7 @@ package com.app.bitcoinapp.view
 
 import android.content.Context
 import android.content.Intent
+import android.graphics.Color
 import android.os.Bundle
 import android.view.View
 import android.widget.TextView
@@ -35,8 +36,10 @@ class FavoriteActivity : AppCompatActivity(), View.OnClickListener, ClickItemLis
         date.text = setDate.getLocalDate()
         date.contentDescription = setDate.getLocalDate()
 
+
         btn_main.setOnClickListener(this)
 
+        bottomColors()
         initViewModel()
         observerFavorites()
     }
@@ -92,5 +95,10 @@ class FavoriteActivity : AppCompatActivity(), View.OnClickListener, ClickItemLis
     override fun onResume() {
         super.onResume()
         observerFavorites()
+    }
+
+    private fun bottomColors() {
+        btn_detail.setColorFilter(Color.parseColor("#9a9b54"))
+        tv_btn_detail.setTextColor(Color.parseColor("#9a9b54"))
     }
 }

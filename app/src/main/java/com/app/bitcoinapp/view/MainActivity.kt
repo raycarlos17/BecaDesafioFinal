@@ -1,10 +1,10 @@
 package com.app.bitcoinapp.view
 
 import android.content.Intent
+import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
-import android.widget.ImageButton
 import android.widget.SearchView
 import android.widget.TextView
 import android.widget.Toast
@@ -16,7 +16,6 @@ import com.app.bitcoinapp.model.helper.ClickItemListener
 import com.app.bitcoinapp.model.helper.SetDate
 import com.app.bitcoinapp.view.adapter.BitCoinAdapter
 import com.app.bitcoinapp.viewmodel.MainViewModel
-import kotlinx.android.synthetic.main.activity_coin_description.*
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.activity_main.btn_detail
 import kotlinx.android.synthetic.main.activity_main.btn_main
@@ -39,6 +38,8 @@ class MainActivity : AppCompatActivity(), View.OnClickListener, ClickItemListene
         btn_main.setOnClickListener(this)
         btn_detail.setOnClickListener(this)
 
+
+        bottomColors()
         initViewModel()
         mainViewObserver()
         initSearch()
@@ -116,5 +117,10 @@ class MainActivity : AppCompatActivity(), View.OnClickListener, ClickItemListene
     override fun onResume() {
         super.onResume()
         mainViewObserver()
+    }
+
+    private fun bottomColors() {
+        btn_main.setColorFilter(Color.parseColor("#9a9b54"))
+        tv_btn_main.setTextColor(Color.parseColor("#9a9b54"))
     }
 }
