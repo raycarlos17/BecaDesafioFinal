@@ -5,7 +5,7 @@
     <string name="btc_title_tv">BTC</string>
     <string name="btn_adicionar">ADICIONAR</string>
     <string name="volumes_negociados">volumes negociados</string>
-    <string name="ltima_hora">última hora</string>
+    <string name="ultima_hora">última hora</string>
     <string name="ultimo_mes">último mês</string>
     <string name="coin_value_hint_zero">$ 000.000.00</string>
     <string name="iv_content_description_coin_image">Imagem da moeda</string>
@@ -17,8 +17,8 @@
     <string name="btn_add_favorite_delete">REMOVER</string>
     <string name="ultimo_dia">último dia</string>
     <string name="barra_de_pesquisar_moeda">Barra de pesquisar moeda</string>
-    <string name="botao_para_lista_de_moedas">botão para lista de moedas</string>
-    <string name="botao_para_moedas_favoritas">botão para moedas favoritas</string>
+    <string name="botao_para_lista_de_moedas">Botão para lista de moedas</string>
+    <string name="botao_para_moedas_favoritas">Botão para moedas favoritas</string>
     <string name="lista_de_moedas">Lista de moedas</string>
     <string name="botao_de_voltar_para_lista_de_moedas">Botão de voltar para lista de moedas</string>
     <string name="btn_tentar_novamente">Tentar Novamente</string>

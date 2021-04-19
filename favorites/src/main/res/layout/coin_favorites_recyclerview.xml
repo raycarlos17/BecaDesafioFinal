@@ -10,7 +10,7 @@
         android:id="@+id/cl_date"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/primaryColor"
+        android:background="@color/favorites_primaryColor"
         app:layout_constraintBottom_toTopOf="@id/gv_list_coin_favorite"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
