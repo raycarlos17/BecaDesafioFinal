@@ -13,7 +13,6 @@ class CoinsRepository_old(private val coinRestApiTask: CoinRestApiTask_old) {
         private const val REQUEST_SUCCESS = 200
     }
 
-
     fun getAllCoins(onSuccess: (List<Coin>) -> Unit, onError: (Int?, String?) -> Unit){
         val request = coinRestApiTask.retrofitApi().getAllAssets()
 
@@ -21,7 +20,6 @@ class CoinsRepository_old(private val coinRestApiTask: CoinRestApiTask_old) {
 
             override fun onResponse(call: Call<List<Coin>>, response: Response<List<Coin>>) {
                 val responseCode = response.code()
-
 
                 if(responseCode == REQUEST_SUCCESS){
                     val coinsList = response.body()!!

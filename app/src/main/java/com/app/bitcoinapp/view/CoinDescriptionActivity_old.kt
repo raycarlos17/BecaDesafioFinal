@@ -12,7 +12,7 @@ import kotlinx.android.synthetic.main.bottom_navigation_view_component.btn_detai
 import kotlinx.android.synthetic.main.bottom_navigation_view_component.btn_main
 import kotlinx.android.synthetic.main.activity_coin_description.*
 
-class CoinDescriptionActivity : AppCompatActivity(), View.OnClickListener {
+class CoinDescriptionActivity_old : AppCompatActivity(), View.OnClickListener {
 
     private var coin: Coin? = null
     private lateinit var sharedPreferences: SharedPreferences
@@ -104,7 +104,7 @@ class CoinDescriptionActivity : AppCompatActivity(), View.OnClickListener {
                 backButton()
             }
             R.id.btn_detail -> {
-                val intentFavorite = Intent(this, FavoriteActivity::class.java)
+                val intentFavorite = Intent(this, FavoriteActivity_old::class.java)
                 startActivity(intentFavorite)
             }
         }

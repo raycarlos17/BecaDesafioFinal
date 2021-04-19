@@ -1,4 +1,4 @@
-package com.app.bitcoinapp.view
+package com.example.favorites.view
 
 import android.content.Context
 import android.content.Intent
@@ -10,11 +10,12 @@ import androidx.appcompat.app.ActionBar
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.DialogFragment
 import androidx.lifecycle.ViewModelProvider
-import com.app.bitcoinapp.R
-import com.app.bitcoinapp.view.adapter.FavoritesAdapter
 import com.example.commons.model.Coin
 import com.example.commons.model.helper.*
 import com.example.commons.model.viewmodel.MainViewModel
+import com.example.details.view.CoinDescriptionActivity
+import com.example.favorites.R
+import com.example.favorites.view.adapter.FavoritesAdapter
 import kotlinx.android.synthetic.main.bottom_navigation_view_component.btn_detail
 import kotlinx.android.synthetic.main.bottom_navigation_view_component.tv_btn_detail
 import kotlinx.android.synthetic.main.bottom_navigation_view_component.btn_main
@@ -67,9 +68,7 @@ class FavoriteActivity : AppCompatActivity(), View.OnClickListener, ClickItemLis
 
     override fun onClick(v: View) {
         val id = v.id
-        val intent = Intent(this, MainActivity::class.java)
         if (id == R.id.btn_main) {
-            startActivity(intent)
             finish()
         }
     }
@@ -88,7 +87,7 @@ class FavoriteActivity : AppCompatActivity(), View.OnClickListener, ClickItemLis
     }
 
     override fun ClickItemList(coin: com.example.commons.model.Coin) {
-        val intent = Intent(this@FavoriteActivity,CoinDescriptionActivity::class.java)
+        val intent = Intent(this@FavoriteActivity, CoinDescriptionActivity::class.java)
         intent.putExtra("EXTRA_COIN", coin)
         startActivity(intent)
     }

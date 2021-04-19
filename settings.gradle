@@ -1,3 +1,5 @@
+include ':details'
+include ':favorites'
 include ':commons'
 include ':favoritos'
 include ':F'

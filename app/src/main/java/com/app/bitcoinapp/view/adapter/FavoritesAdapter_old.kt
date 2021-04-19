@@ -12,7 +12,7 @@ import com.example.commons.model.Coin
 import com.example.commons.model.helper.ClickItemListener
 import com.squareup.picasso.Picasso
 
-class FavoritesAdapter(
+class FavoritesAdapter_old(
     private var context: Context,
     private var list: List<Coin>,
     private var listener: ClickItemListener

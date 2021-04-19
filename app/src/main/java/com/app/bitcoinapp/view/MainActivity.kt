@@ -19,6 +19,8 @@ import com.app.bitcoinapp.view.adapter.BitCoinAdapter
 import com.example.commons.model.Coin
 import com.example.commons.model.helper.BottomNavigation
 import com.example.commons.model.viewmodel.MainViewModel
+import com.example.details.view.CoinDescriptionActivity
+import com.example.favorites.view.FavoriteActivity
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.bottom_navigation_view_component.btn_detail
 import kotlinx.android.synthetic.main.bottom_navigation_view_component.btn_main
