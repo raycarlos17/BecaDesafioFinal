@@ -21,4 +21,6 @@
     <string name="botao_para_moedas_favoritas">botão para moedas favoritas</string>
     <string name="lista_de_moedas">Lista de moedas</string>
     <string name="botao_de_voltar_para_lista_de_moedas">Botão de voltar para lista de moedas</string>
+    <string name="btn_tentar_novamente">Tentar Novamente</string>
+    <string name="btn_cancelar">Cancelar</string>
 </resources>
