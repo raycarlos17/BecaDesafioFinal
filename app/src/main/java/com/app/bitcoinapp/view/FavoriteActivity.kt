@@ -12,10 +12,7 @@ import androidx.fragment.app.DialogFragment
 import androidx.lifecycle.ViewModelProvider
 import com.app.bitcoinapp.R
 import com.app.bitcoinapp.model.Coin
-import com.app.bitcoinapp.model.helper.BottomNavigation
-import com.app.bitcoinapp.model.helper.ClickItemListener
-import com.app.bitcoinapp.model.helper.SetDate
-import com.app.bitcoinapp.model.helper.SharedPreferences
+import com.app.bitcoinapp.model.helper.*
 import com.app.bitcoinapp.view.adapter.FavoritesAdapter
 import com.app.bitcoinapp.viewmodel.MainViewModel
 import kotlinx.android.synthetic.main.bottom_navigation_view_component.btn_detail
@@ -50,7 +47,7 @@ class FavoriteActivity : AppCompatActivity(), View.OnClickListener, ClickItemLis
     private fun initViewModel(){
         mainViewModel =
             ViewModelProvider.NewInstanceFactory().create(MainViewModel::class.java)
-        mainViewModel.init(this.supportFragmentManager)
+        mainViewModel.init(this.supportFragmentManager, ConnectionState().isConnected(this))
     }
 
     private fun observerFavorites() {

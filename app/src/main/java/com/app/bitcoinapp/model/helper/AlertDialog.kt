@@ -1,4 +1,4 @@
-package com.app.bitcoinapp.view
+package com.app.bitcoinapp.model.helper
 
 import android.app.AlertDialog
 import android.app.Dialog

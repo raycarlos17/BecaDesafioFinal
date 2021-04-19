@@ -1,6 +1,6 @@
 package com.app.bitcoinapp.view
 
-import android.content.Context
+import com.app.bitcoinapp.model.helper.ConnectionState
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -13,6 +13,7 @@ import androidx.fragment.app.DialogFragment
 import androidx.lifecycle.ViewModelProvider
 import com.app.bitcoinapp.R
 import com.app.bitcoinapp.model.Coin
+import com.app.bitcoinapp.model.helper.AlertDialog
 import com.app.bitcoinapp.model.helper.BottomNavigation
 import com.app.bitcoinapp.model.helper.ClickItemListener
 import com.app.bitcoinapp.model.helper.SetDate
@@ -50,7 +51,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener, ClickItemListene
 
     private fun initViewModel(){
         mainViewModel = ViewModelProvider.NewInstanceFactory().create(MainViewModel::class.java)
-        mainViewModel.init(this.supportFragmentManager)
+        mainViewModel.init(this.supportFragmentManager, ConnectionState().isConnected(this))
     }
 
     private fun mainViewObserver(){
