@@ -7,18 +7,18 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.app.bitcoinapp.R
-import com.app.bitcoinapp.model.Coin
-import com.app.bitcoinapp.model.api.CoinRestApiTask
-import com.app.bitcoinapp.repository.CoinsRepository
-import com.app.bitcoinapp.model.helper.AlertDialog
+import com.app.bitcoinapp.model.api.CoinRestApiTask_old
+import com.app.bitcoinapp.repository.CoinsRepository_old
+import com.example.commons.model.Coin
+import com.example.commons.model.helper.AlertDialog
 import java.text.NumberFormat
 import java.util.*
 
-class MainViewModel : ViewModel() {
+class MainViewModel_old : ViewModel() {
 
     private lateinit var supportFragmentManager: FragmentManager
-    private val coinRestApiTask = CoinRestApiTask()
-    private val coinsRepository = CoinsRepository(coinRestApiTask)
+    private val coinRestApiTask = CoinRestApiTask_old()
+    private val coinsRepository = CoinsRepository_old(coinRestApiTask)
     private val usd = Currency.getInstance("USD")
     private var formatUSDCurrency = NumberFormat.getCurrencyInstance(Locale.US)
 

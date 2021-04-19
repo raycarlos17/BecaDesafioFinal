@@ -5,8 +5,8 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import com.app.bitcoinapp.R
-import com.app.bitcoinapp.model.Coin
-import com.app.bitcoinapp.model.helper.SharedPreferences
+import com.example.commons.model.Coin
+import com.example.commons.model.helper.SharedPreferences
 import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.bottom_navigation_view_component.btn_detail
 import kotlinx.android.synthetic.main.bottom_navigation_view_component.btn_main

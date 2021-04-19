@@ -11,10 +11,10 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.DialogFragment
 import androidx.lifecycle.ViewModelProvider
 import com.app.bitcoinapp.R
-import com.app.bitcoinapp.model.Coin
-import com.app.bitcoinapp.model.helper.*
 import com.app.bitcoinapp.view.adapter.FavoritesAdapter
-import com.app.bitcoinapp.viewmodel.MainViewModel
+import com.example.commons.model.Coin
+import com.example.commons.model.helper.*
+import com.example.commons.model.viewmodel.MainViewModel
 import kotlinx.android.synthetic.main.bottom_navigation_view_component.btn_detail
 import kotlinx.android.synthetic.main.bottom_navigation_view_component.tv_btn_detail
 import kotlinx.android.synthetic.main.bottom_navigation_view_component.btn_main
@@ -87,7 +87,7 @@ class FavoriteActivity : AppCompatActivity(), View.OnClickListener, ClickItemLis
         return newListCoin
     }
 
-    override fun ClickItemList(coin: Coin) {
+    override fun ClickItemList(coin: com.example.commons.model.Coin) {
         val intent = Intent(this@FavoriteActivity,CoinDescriptionActivity::class.java)
         intent.putExtra("EXTRA_COIN", coin)
         startActivity(intent)
@@ -102,4 +102,5 @@ class FavoriteActivity : AppCompatActivity(), View.OnClickListener, ClickItemLis
         initViewModel()
         observerFavorites()
     }
+
 }

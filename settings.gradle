@@ -1,2 +1,5 @@
+include ':commons'
+include ':favoritos'
+include ':F'
 include ':app'
 rootProject.name = "BitCoinApp"

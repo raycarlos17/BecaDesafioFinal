@@ -1,4 +1,4 @@
-package com.app.bitcoinapp.model.helper
+package com.example.commons.model.helper
 
 import android.app.AlertDialog
 import android.app.Dialog
@@ -6,7 +6,7 @@ import android.content.Context
 import android.content.DialogInterface
 import android.os.Bundle
 import androidx.fragment.app.DialogFragment
-import com.app.bitcoinapp.R
+import com.example.commons.R
 
 class AlertDialog(message: String): DialogFragment() {
 
@@ -22,7 +22,8 @@ class AlertDialog(message: String): DialogFragment() {
             val builder = AlertDialog.Builder(it)
 
             builder.setMessage(dialogMessage)
-                .setPositiveButton(R.string.btn_tentar_novamente,
+                .setPositiveButton(
+                    R.string.commons_btn_tentar_novamente,
                     DialogInterface.OnClickListener { dialog, id ->
                         listener.onDialogPositiveClick(this)
                     })

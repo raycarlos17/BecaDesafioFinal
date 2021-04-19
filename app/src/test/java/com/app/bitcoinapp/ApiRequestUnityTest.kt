@@ -1,7 +1,6 @@
 package com.app.bitcoinapp
 
-import com.app.bitcoinapp.model.Coin
-import com.app.bitcoinapp.model.api.CoinRestApiTask
+import com.app.bitcoinapp.model.api.CoinRestApiTask_old
 import org.junit.Test
 
 import org.junit.Assert.*
@@ -25,7 +24,7 @@ class ApiRequestUnityTest {
     }
 
     private fun mockApiTrendingRequest(): Response<List<Coin>> {
-        val coinRestApiTask = CoinRestApiTask()
+        val coinRestApiTask = CoinRestApiTask_old()
         val request = coinRestApiTask.retrofitApi().getAllAssets().execute()
         return request
     }

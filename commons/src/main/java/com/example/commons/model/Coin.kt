@@ -1,10 +1,8 @@
-package com.app.bitcoinapp.model
+package com.example.commons.model
 
-import android.content.Context
 import android.os.Parcelable
 import com.google.gson.annotations.SerializedName
 import kotlinx.android.parcel.Parcelize
-import kotlinx.android.parcel.RawValue
 
 @Parcelize
 data class Coin(

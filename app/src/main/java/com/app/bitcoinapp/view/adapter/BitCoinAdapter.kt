@@ -8,12 +8,12 @@ import androidx.appcompat.widget.AppCompatImageView
 import androidx.appcompat.widget.AppCompatTextView
 import androidx.recyclerview.widget.RecyclerView
 import com.app.bitcoinapp.R
-import com.app.bitcoinapp.model.Coin
-import com.app.bitcoinapp.model.helper.ClickItemListener
-import com.app.bitcoinapp.model.helper.SharedPreferences
+import com.example.commons.model.Coin
+import com.example.commons.model.helper.ClickItemListener
+import com.example.commons.model.helper.SharedPreferences
 import com.squareup.picasso.Picasso
 
-class BitCoinAdapter(private var context:Context,private var list: List<Coin>, private var listener: ClickItemListener) :
+class BitCoinAdapter(private var context:Context, private var list: List<Coin>, private var listener: ClickItemListener) :
     RecyclerView.Adapter<BitCoinViewHolder>() {
 
 

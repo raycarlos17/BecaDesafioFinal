@@ -1,6 +1,6 @@
 package com.app.bitcoinapp.view
 
-import com.app.bitcoinapp.model.helper.ConnectionState
+import com.example.commons.model.helper.ConnectionState
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -12,13 +12,13 @@ import androidx.appcompat.app.ActionBar
 import androidx.fragment.app.DialogFragment
 import androidx.lifecycle.ViewModelProvider
 import com.app.bitcoinapp.R
-import com.app.bitcoinapp.model.Coin
-import com.app.bitcoinapp.model.helper.AlertDialog
-import com.app.bitcoinapp.model.helper.BottomNavigation
-import com.app.bitcoinapp.model.helper.ClickItemListener
-import com.app.bitcoinapp.model.helper.SetDate
+import com.example.commons.model.helper.AlertDialog
+import com.example.commons.model.helper.ClickItemListener
+import com.example.commons.model.helper.SetDate
 import com.app.bitcoinapp.view.adapter.BitCoinAdapter
-import com.app.bitcoinapp.viewmodel.MainViewModel
+import com.example.commons.model.Coin
+import com.example.commons.model.helper.BottomNavigation
+import com.example.commons.model.viewmodel.MainViewModel
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.bottom_navigation_view_component.btn_detail
 import kotlinx.android.synthetic.main.bottom_navigation_view_component.btn_main
@@ -57,7 +57,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener, ClickItemListene
     private fun mainViewObserver(){
         mainViewModel.bitCoinsList.observe(this, {  list ->
             if (list != null){
-                bit_coin_list.adapter = BitCoinAdapter(this,list, this)
+                bit_coin_list.adapter = BitCoinAdapter(this, list, this)
             }else{
                 Toast.makeText(
                     this,
@@ -112,7 +112,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener, ClickItemListene
         }
     }
 
-    override fun ClickItemList(coin: Coin) {
+    override fun ClickItemList(coin: com.example.commons.model.Coin) {
         val intent = Intent(this, CoinDescriptionActivity::class.java)
         intent.putExtra("EXTRA_COIN", coin)
         startActivity(intent)

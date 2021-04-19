@@ -1,4 +1,4 @@
-package com.app.bitcoinapp.model.helper
+package com.example.commons.model.helper
 
 import java.time.LocalDateTime
 import java.time.format.DateTimeFormatter

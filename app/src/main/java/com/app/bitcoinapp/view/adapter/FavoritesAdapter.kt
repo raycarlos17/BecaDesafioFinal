@@ -8,8 +8,8 @@ import android.widget.BaseAdapter
 import androidx.appcompat.widget.AppCompatImageView
 import androidx.appcompat.widget.AppCompatTextView
 import com.app.bitcoinapp.R
-import com.app.bitcoinapp.model.Coin
-import com.app.bitcoinapp.model.helper.ClickItemListener
+import com.example.commons.model.Coin
+import com.example.commons.model.helper.ClickItemListener
 import com.squareup.picasso.Picasso
 
 class FavoritesAdapter(

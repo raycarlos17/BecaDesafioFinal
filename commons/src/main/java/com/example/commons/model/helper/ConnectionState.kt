@@ -1,4 +1,4 @@
-package com.app.bitcoinapp.model.helper
+package com.example.commons.model.helper
 
 import android.content.Context
 import android.net.ConnectivityManager

@@ -1,6 +1,6 @@
-package com.app.bitcoinapp.model.api
+package com.example.commons.model.api
 
-import com.app.bitcoinapp.model.Coin
+import com.example.commons.model.Coin
 import retrofit2.Call
 import retrofit2.http.GET
 import retrofit2.http.Headers

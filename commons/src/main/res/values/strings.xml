@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="commons_btn_tentar_novamente">Tentar Novamente</string>
+    <string name="commons_btn_cancelar">Cancelar</string>
+</resources>
