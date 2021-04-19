@@ -66,7 +66,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener, ClickItemListene
     }
 
     private fun searchCoins(search: String){
-        var searchedCoins: MutableList<Coin> = arrayListOf()
+        val searchedCoins: MutableList<Coin> = arrayListOf()
         mainViewModel.bitCoinsList.value?.forEach{
             if(it.name != null){
                 if(it.name.contains(search, ignoreCase = true)){
@@ -103,8 +103,8 @@ class MainActivity : AppCompatActivity(), View.OnClickListener, ClickItemListene
             }
 
             (id == R.id.btn_detail) -> {
-                val intentFavorite = Intent(this, FavoriteActivity::class.java)
-                startActivity(intentFavorite)
+                val intent = Intent(this, FavoriteActivity::class.java)
+                startActivity(intent)
             }
         }
     }
