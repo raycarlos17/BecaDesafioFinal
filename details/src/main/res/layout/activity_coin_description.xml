@@ -5,14 +5,14 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
 
-    android:background="@color/primaryColor">
+    android:background="@color/details_primaryColor">
 
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/cl_primary"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:background="@color/colorSecondary"
+        android:background="@color/details_colorSecondary"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -24,8 +24,8 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
             android:layout_marginTop="35dp"
-            android:background="@color/colorSecondary"
-            android:contentDescription="@string/botao_de_voltar_para_lista_de_moedas"
+            android:background="@color/details_colorSecondary"
+            android:contentDescription="@string/details_botao_de_voltar_para_lista_de_moedas"
             android:padding="8dp"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintTop_toTopOf="parent">
@@ -34,14 +34,14 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:background="@color/colorSecondary"
+                android:background="@color/details_colorSecondary"
                 android:src="@drawable/ic_baseline_arrow_back_ios_24" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:text="@string/tv_btn_voltar"
+                android:text="@string/details_tv_btn_voltar"
                 android:textColor="#F3F3F3"
                 android:textSize="18sp" />
 
@@ -53,7 +53,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="40dp"
-            android:text="@string/btc_title_tv"
+            android:text="@string/details_btc_title_tv"
             android:textColor="#F3F3F3"
             android:textSize="25sp"
             android:textStyle="bold"
@@ -66,7 +66,7 @@
             android:layout_width="40dp"
             android:layout_height="40dp"
             android:layout_marginTop="40dp"
-            android:contentDescription="@string/iv_content_description_coin_image"
+            android:contentDescription="@string/details_iv_content_description_coin_image"
             app:layout_constraintLeft_toLeftOf="@id/tv_coin_sigla"
             app:layout_constraintRight_toRightOf="@id/tv_coin_sigla"
             app:layout_constraintTop_toBottomOf="@id/tv_coin_sigla"
@@ -89,7 +89,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="12dp"
-            android:hint="@string/coin_value_hint_zero"
+            android:hint="@string/details_coin_value_hint_zero"
             android:textAlignment="center"
             android:textColor="#F3F3F3"
             android:textColorHint="#F3F3F3"
@@ -107,17 +107,17 @@
             android:layout_height="70dp"
             android:layout_marginTop="40dp"
             android:layout_marginBottom="40dp"
-            android:text="@string/btn_adicionar"
+            android:text="@string/details_btn_adicionar"
             android:textColor="#F3F3F3"
             android:textSize="18sp"
             android:textStyle="bold"
-            app:backgroundTint="@color/colorSecondary"
+            app:backgroundTint="@color/details_colorSecondary"
             app:cornerRadius="10dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintLeft_toLeftOf="@id/tv_coin_value"
             app:layout_constraintRight_toRightOf="@id/tv_coin_value"
             app:layout_constraintTop_toBottomOf="@id/tv_coin_value"
-            app:strokeColor="@color/white"
+            app:strokeColor="@color/details_white"
             app:strokeWidth="1dp" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
@@ -141,8 +141,8 @@
                 android:id="@+id/tv_volumes_negociados"
                 style="@style/TextView_volumes_negociados"
                 android:layout_marginTop="20dp"
-                android:contentDescription="@string/volumes_negociados"
-                android:text="@string/volumes_negociados"
+                android:contentDescription="@string/details_volumes_negociados"
+                android:text="@string/details_volumes_negociados"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintRight_toRightOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
@@ -151,7 +151,7 @@
                 android:id="@+id/tv_ultima_hora"
                 style="@style/TextView_volumes_negociados"
                 android:layout_marginStart="30dp"
-                android:text="@string/ltima_hora"
+                android:text="@string/details_ltima_hora"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/tv_volumes_negociados" />
 
@@ -161,7 +161,7 @@
                 android:layout_width="200dp"
                 android:layout_marginTop="0dp"
                 android:layout_marginEnd="30dp"
-                android:hint="@string/coin_value_hint_zero"
+                android:hint="@string/details_coin_value_hint_zero"
                 android:textAlignment="textEnd"
                 app:layout_constraintRight_toRightOf="parent"
                 app:layout_constraintTop_toTopOf="@id/tv_ultima_hora" />
@@ -170,7 +170,7 @@
                 android:id="@+id/tv_ultimo_dia"
                 style="@style/TextView_volumes_negociados"
                 android:layout_marginStart="30dp"
-                android:text="@string/ultimo_dia"
+                android:text="@string/details_ultimo_dia"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/tv_ultima_hora" />
 
@@ -180,7 +180,7 @@
                 android:layout_width="200dp"
                 android:layout_marginTop="0dp"
                 android:layout_marginEnd="30dp"
-                android:hint="@string/coin_value_hint_zero"
+                android:hint="@string/details_coin_value_hint_zero"
                 android:textAlignment="textEnd"
                 app:layout_constraintRight_toRightOf="parent"
                 app:layout_constraintTop_toTopOf="@id/tv_ultimo_dia" />
@@ -189,7 +189,7 @@
                 android:id="@+id/tv_ultimo_mes"
                 style="@style/TextView_volumes_negociados"
                 android:layout_marginStart="30dp"
-                android:text="@string/ultimo_mes"
+                android:text="@string/details_ultimo_mes"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/tv_ultimo_dia" />
 
@@ -199,7 +199,7 @@
                 android:layout_width="200dp"
                 android:layout_marginTop="0dp"
                 android:layout_marginEnd="30dp"
-                android:hint="@string/coin_value_hint_zero"
+                android:hint="@string/details_coin_value_hint_zero"
                 android:textAlignment="textEnd"
                 app:layout_constraintRight_toRightOf="parent"
                 app:layout_constraintTop_toTopOf="@id/tv_ultimo_mes" />

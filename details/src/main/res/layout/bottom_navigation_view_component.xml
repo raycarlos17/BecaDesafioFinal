@@ -4,7 +4,7 @@
     android:id="@+id/bottomNavigationView"
     android:layout_width="match_parent"
     android:layout_height="75dp"
-    android:background="@color/primaryColor"
+    android:background="@color/details_primaryColor"
     app:layout_constraintBottom_toBottomOf="parent"
     app:layout_constraintHorizontal_bias="0.5"
     app:layout_constraintLeft_toLeftOf="parent"
@@ -19,7 +19,7 @@
             android:id="@+id/ll_menu_bottom_moedas"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:contentDescription="@string/botao_para_lista_de_moedas"
+            android:contentDescription="@string/details_botao_para_lista_de_moedas"
             android:orientation="vertical">
 
             <ImageButton
@@ -27,7 +27,7 @@
                 android:layout_width="205dp"
                 android:layout_height="50dp"
                 android:layout_gravity="top"
-                android:backgroundTint="@color/primaryColor"
+                android:backgroundTint="@color/details_primaryColor"
                 android:padding="100dp"
                 android:src="@drawable/ic_baseline_attach_money_24" />
 
@@ -36,7 +36,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="bottom|center"
-                android:text="@string/ll_tv_menu_bottom_moedas"
+                android:text="@string/details_ll_tv_menu_bottom_moedas"
                 android:textColor="#9c9c9c" />
         </LinearLayout>
 
@@ -44,14 +44,14 @@
             android:id="@+id/ll_menu_bottom_adicionadas"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:contentDescription="@string/botao_para_moedas_favoritas"
+            android:contentDescription="@string/details_botao_para_moedas_favoritas"
             android:orientation="vertical">
 
             <ImageButton
                 android:id="@+id/btn_detail"
                 android:layout_width="wrap_content"
                 android:layout_height="50dp"
-                android:backgroundTint="@color/primaryColor"
+                android:backgroundTint="@color/details_primaryColor"
                 android:padding="100dp"
                 android:src="@drawable/ic_baseline_star_24" />
 
@@ -60,7 +60,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="bottom|center"
-                android:text="@string/ll_tv_menu_bottom_adicionadas"
+                android:text="@string/details_ll_tv_menu_bottom_adicionadas"
                 android:textColor="#9c9c9c" />
 
         </LinearLayout>

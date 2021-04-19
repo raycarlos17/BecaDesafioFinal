@@ -44,8 +44,8 @@ class CoinDescriptionActivity : AppCompatActivity(), View.OnClickListener {
             btn_add_favorite.contentDescription = getString(R.string.btn_add_favorite_delete)
             coin?.favorite = false
         } else if (!statusFavorite) {
-            btn_add_favorite.text = getString(R.string.btn_adicionar)
-            btn_add_favorite.contentDescription = getString(R.string.btn_adicionar)
+            btn_add_favorite.text = getString(R.string.details_btn_adicionar)
+            btn_add_favorite.contentDescription = getString(R.string.details_btn_adicionar)
             coin?.favorite = true
         }
     }

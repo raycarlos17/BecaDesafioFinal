@@ -1,26 +1,20 @@
 <resources>
-    <string name="app_name">Moeda Digital</string>
-    <string name="title_main_activity">Moeda Digital</string>
-    <string name="hint_search_bar">Search</string>
-    <string name="btc_title_tv">BTC</string>
-    <string name="btn_adicionar">ADICIONAR</string>
-    <string name="volumes_negociados">volumes negociados</string>
-    <string name="ltima_hora">última hora</string>
-    <string name="ultimo_mes">último mês</string>
-    <string name="coin_value_hint_zero">$ 000.000.00</string>
-    <string name="iv_content_description_coin_image">Imagem da moeda</string>
-    <string name="date_example">4 jan 2021</string>
-    <string name="tv_btn_voltar">Voltar</string>
-    <string name="ll_tv_menu_bottom_moedas">Moedas</string>
-    <string name="ll_tv_menu_bottom_adicionadas">Adicionadas</string>
-    <string name="tv_title_bitcoin">Bitcoin</string>
+
+    <string name="details_btc_title_tv">BTC</string>
+    <string name="details_btn_adicionar">ADICIONAR</string>
+    <string name="details_volumes_negociados">volumes negociados</string>
+    <string name="details_ltima_hora">última hora</string>
+    <string name="details_ultimo_mes">último mês</string>
+    <string name="details_coin_value_hint_zero">$ 000.000.00</string>
+    <string name="details_iv_content_description_coin_image">Imagem da moeda</string>
+    <string name="details_tv_btn_voltar">Voltar</string>
+    <string name="details_ll_tv_menu_bottom_moedas">Moedas</string>
+    <string name="details_ll_tv_menu_bottom_adicionadas">Adicionadas</string>
+    <string name="details_botao_para_lista_de_moedas">botão para lista de moedas</string>
+    <string name="details_botao_para_moedas_favoritas">botão para moedas favoritas</string>
     <string name="btn_add_favorite_delete">REMOVER</string>
-    <string name="ultimo_dia">último dia</string>
-    <string name="barra_de_pesquisar_moeda">Barra de pesquisar moeda</string>
-    <string name="botao_para_lista_de_moedas">botão para lista de moedas</string>
-    <string name="botao_para_moedas_favoritas">botão para moedas favoritas</string>
-    <string name="lista_de_moedas">Lista de moedas</string>
-    <string name="botao_de_voltar_para_lista_de_moedas">Botão de voltar para lista de moedas</string>
-    <string name="btn_tentar_novamente">Tentar Novamente</string>
-    <string name="btn_cancelar">Cancelar</string>
+    <string name="details_ultimo_dia">último dia</string>
+    <string name="details_lista_de_moedas">Lista de moedas</string>
+    <string name="details_botao_de_voltar_para_lista_de_moedas">Botão de voltar para lista de moedas</string>
+    <string name="details_btn_tentar_novamente">Tentar Novamente</string>
 </resources>
