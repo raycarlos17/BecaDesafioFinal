@@ -1,6 +1,7 @@
 package com.app.bitcoinapp.view
 
 import android.app.Application
+
 import com.example.commons.model.helper.ConnectionState
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
@@ -19,6 +20,8 @@ import com.example.commons.model.helper.SetDate
 import com.app.bitcoinapp.view.adapter.BitCoinAdapter
 import com.example.commons.model.Coin
 import com.example.commons.model.helper.BottomNavigation
+import com.example.commons.model.helper.Constants.Companion.REQUEST_CODE
+import com.example.commons.model.helper.Constants.Companion.RESULT_FAVORITES
 import com.example.commons.model.viewmodel.MainViewModel
 import com.example.details.view.CoinDescriptionActivity
 import com.example.favorites.view.FavoriteActivity
@@ -118,7 +121,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener, ClickItemListene
     override fun ClickItemList(coin: com.example.commons.model.Coin) {
         val intent = Intent(this, CoinDescriptionActivity::class.java)
         intent.putExtra("EXTRA_COIN", coin)
-        startActivity(intent)
+        startActivityForResult(intent, REQUEST_CODE)
     }
 
     override fun onResume() {
@@ -131,4 +134,13 @@ class MainActivity : AppCompatActivity(), View.OnClickListener, ClickItemListene
         mainViewObserver()
     }
 
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+
+        println("RS: $resultCode  RF: $RESULT_FAVORITES")
+        if(resultCode == RESULT_FAVORITES){
+            val intent = Intent(this, FavoriteActivity::class.java)
+            startActivity(intent)
+        }
+    }
 }

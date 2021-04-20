@@ -12,6 +12,8 @@ import androidx.fragment.app.DialogFragment
 import androidx.lifecycle.ViewModelProvider
 import com.example.commons.model.Coin
 import com.example.commons.model.helper.*
+import com.example.commons.model.helper.Constants.Companion.REQUEST_CODE
+import com.example.commons.model.helper.Constants.Companion.RESULT_MAIN
 import com.example.commons.model.viewmodel.MainViewModel
 import com.example.details.view.CoinDescriptionActivity
 import com.example.favorites.R
@@ -89,7 +91,7 @@ class FavoriteActivity : AppCompatActivity(), View.OnClickListener, ClickItemLis
     override fun ClickItemList(coin: com.example.commons.model.Coin) {
         val intent = Intent(this@FavoriteActivity, CoinDescriptionActivity::class.java)
         intent.putExtra("EXTRA_COIN", coin)
-        startActivity(intent)
+        startActivityForResult(intent, REQUEST_CODE)
     }
 
     override fun onResume() {
@@ -100,6 +102,14 @@ class FavoriteActivity : AppCompatActivity(), View.OnClickListener, ClickItemLis
     override fun onDialogPositiveClick(dialog: DialogFragment) {
         initViewModel()
         observerFavorites()
+    }
+
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+
+        if(resultCode == RESULT_MAIN){
+            finish()
+        }
     }
 
 }
