@@ -12,8 +12,6 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.BitCoinApp">
-        <activity android:name=".view.FavoriteActivity_old"/>
-        <activity android:name=".view.CoinDescriptionActivity_old"/>
         <activity android:name=".view.MainActivity"/>
         <activity android:name=".view.SplashScreenActivity">
             <intent-filter>
