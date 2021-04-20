@@ -4,9 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-
     android:background="@color/details_primaryColor">
-
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/cl_primary"
@@ -44,7 +42,6 @@
                 android:text="@string/details_tv_btn_voltar"
                 android:textColor="#F3F3F3"
                 android:textSize="18sp" />
-
 
         </LinearLayout>
 
@@ -99,7 +96,6 @@
             app:layout_constraintLeft_toLeftOf="@id/iv_coin"
             app:layout_constraintRight_toRightOf="@id/iv_coin"
             app:layout_constraintTop_toBottomOf="@id/iv_coin" />
-
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btn_add_favorite"
@@ -206,8 +202,6 @@
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
-
-
 
     <include
         android:id="@+id/bottomNavigationViewComponent"

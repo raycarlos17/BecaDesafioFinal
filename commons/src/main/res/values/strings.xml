@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="commons_btn_tentar_novamente">Tentar Novamente</string>
-    <string name="commons_btn_cancelar">Cancelar</string>
     <string name="commons_date_example">4 jan 2021</string>
     <string name="commons_ll_tv_menu_bottom_moedas">Moedas</string>
     <string name="commons_ll_tv_menu_bottom_adicionadas">Adicionadas</string>

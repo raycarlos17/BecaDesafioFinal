@@ -64,7 +64,5 @@
                 android:textColor="#9c9c9c" />
 
         </LinearLayout>
-
     </LinearLayout>
-
 </com.google.android.material.bottomnavigation.BottomNavigationView>
