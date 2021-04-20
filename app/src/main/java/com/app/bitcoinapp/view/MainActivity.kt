@@ -1,5 +1,6 @@
 package com.app.bitcoinapp.view
 
+import android.app.Application
 import com.example.commons.model.helper.ConnectionState
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity

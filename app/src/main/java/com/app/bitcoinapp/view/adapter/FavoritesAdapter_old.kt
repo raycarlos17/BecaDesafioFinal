@@ -25,9 +25,8 @@ class FavoritesAdapter_old(
         return list.size
     }
 
-    override fun getItem(position: Int): List<Coin> {
+    override fun getItem(position: Int): Coin {
 
-        val listCoin: MutableList<Coin> = arrayListOf()
         val coin: Coin = Coin(
             list[position].assetId,
             list[position].name,
@@ -42,8 +41,7 @@ class FavoritesAdapter_old(
             list[position].iconUrl,
             list[position].favorite
         )
-        listCoin.add(coin)
-        return listCoin
+        return coin
     }
 
     override fun getItemId(position: Int): Long {
@@ -71,22 +69,22 @@ class FavoritesAdapter_old(
         val value: AppCompatTextView? = convertView?.findViewById(R.id.tv_coin_value_favorite)
         val image: AppCompatImageView? = convertView?.findViewById(R.id.iv_favorite_icon)
 
-        val list: List<Coin> = getItem(position)
+        val objCoin: Coin = getItem(position)
 
         convertView?.setOnClickListener {
-            listener.ClickItemList(list[0])
+            listener.ClickItemList(objCoin)
         }
 
-        title?.text = list[0].name
-        title?.contentDescription = "Nome da moeda ${list[0].name}"
+        title?.text = objCoin.name
+        title?.contentDescription = "Nome da moeda ${objCoin.name}"
 
-        subTitle?.text = list[0].assetId
-        subTitle?.contentDescription = "Sigla da moeda ${list[0].assetId}"
+        subTitle?.text = objCoin.assetId
+        subTitle?.contentDescription = "Sigla da moeda ${objCoin.assetId}"
 
-        value?.text = list[0].priceUsd
-        value?.contentDescription = "Valor da moeda ${list[0].priceUsd}"
+        value?.text = objCoin.priceUsd
+        value?.contentDescription = "Valor da moeda ${objCoin.priceUsd}"
 
-        Picasso.get().load("${list[0].iconUrl}.png")
+        Picasso.get().load("${objCoin.iconUrl}.png")
             .placeholder(R.drawable.ic_image)
             .into(image)
 
