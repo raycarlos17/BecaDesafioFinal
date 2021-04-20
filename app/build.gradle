@@ -42,9 +42,12 @@ dependencies {
     implementation 'com.squareup.retrofit2:retrofit:2.9.0'
     implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
     implementation 'com.squareup.picasso:picasso:2.71828'
-    implementation files("libs/commons-debug.aar")
-    implementation files("libs/details-debug.aar")
-    implementation files("libs/favorites-debug.aar")
+//    implementation files("libs/commons-debug.aar")
+//    implementation files("libs/details-debug.aar")
+//    implementation files("libs/favorites-debug.aar")
+    implementation project(":commons")
+    implementation project(":details")
+    implementation project(":favorites")
     testImplementation 'junit:junit:4.+'
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
