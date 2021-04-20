@@ -50,6 +50,12 @@ class FavoriteActivity : AppCompatActivity(), View.OnClickListener, ClickItemLis
         val coinsList: List<Coin> = createList()
         if(coinsList.size != null){
             gv_list_coin_favorite.adapter = FavoritesAdapter(this, coinsList, this@FavoriteActivity)
+
+            if (coinsList.size == 0) {
+                tv_no_favorite_coins.visibility = View.VISIBLE
+            } else {
+                tv_no_favorite_coins.visibility = View.GONE
+            }
         }
     }
 

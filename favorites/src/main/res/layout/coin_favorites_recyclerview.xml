@@ -28,6 +28,22 @@
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
+    <TextView
+        android:id="@+id/tv_no_favorite_coins"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="@string/nao_possui_moedas_adicionadas_favoritos"
+        android:textAlignment="center"
+        android:textColor="@color/favorites_colorPrimaryLight"
+        android:textSize="21sp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toTopOf="@id/bottomNavigationViewComponent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/cl_date"
+        tools:visibility="gone" />
+
     <GridView
         android:id="@+id/gv_list_coin_favorite"
         android:layout_width="match_parent"
