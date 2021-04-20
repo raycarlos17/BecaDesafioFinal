@@ -15,7 +15,6 @@ import com.example.commons.model.Coin
 import com.example.commons.model.helper.*
 import com.example.commons.model.helper.Constants.Companion.REQUEST_CODE
 import com.example.commons.model.helper.Constants.Companion.RESULT_MAIN
-import com.example.commons.model.viewmodel.MainViewModel
 import com.example.details.view.CoinDescriptionActivity
 import com.example.favorites.R
 import com.example.favorites.view.adapter.FavoritesAdapter
@@ -23,7 +22,6 @@ import kotlinx.android.synthetic.main.coin_favorites_recyclerview.*
 
 class FavoriteActivity : AppCompatActivity(), View.OnClickListener, ClickItemListener, AlertDialog.AlertDialogListener {
 
-    private lateinit var mainViewModel: MainViewModel
     private lateinit var sharedPreferences: SharedPreferences
     private val setDate = SetDate()
     private val bottomNavigation = BottomNavigation()
@@ -45,29 +43,14 @@ class FavoriteActivity : AppCompatActivity(), View.OnClickListener, ClickItemLis
 
         btnMain.setOnClickListener(this)
 
-        initViewModel()
-        observerFavorites()
+        initFavoritesList()
     }
 
-    private fun initViewModel(){
-        mainViewModel =
-            ViewModelProvider.NewInstanceFactory().create(MainViewModel::class.java)
-        mainViewModel.init(this.supportFragmentManager, ConnectionState().isConnected(this))
-    }
-
-    private fun observerFavorites() {
-        mainViewModel.bitCoinsList.observe(this, { list ->
-            if (list != null) {
-                gv_list_coin_favorite.adapter =
-                    FavoritesAdapter(this, createList(list, this),this@FavoriteActivity)
-            } else {
-                Toast.makeText(
-                    this,
-                    "Ops tivemos um problema, tente novamente mais tarde!",
-                    Toast.LENGTH_LONG
-                ).show()
-            }
-        })
+    fun initFavoritesList(){
+        val coinsList: List<Coin> = createList()
+        if(coinsList.size != null){
+            gv_list_coin_favorite.adapter = FavoritesAdapter(this, coinsList, this@FavoriteActivity)
+        }
     }
 
     override fun onClick(v: View) {
@@ -77,15 +60,9 @@ class FavoriteActivity : AppCompatActivity(), View.OnClickListener, ClickItemLis
         }
     }
 
-    private fun createList(list: List<Coin>, context: Context): List<Coin> {
-        val newListCoin: MutableList<Coin> = arrayListOf()
-        sharedPreferences = SharedPreferences(context)
-
-        list.forEach {
-            if (sharedPreferences.getBoolean(it.assetId)) {
-                newListCoin.add(it)
-            }
-        }
+    private fun createList(): List<Coin> {
+        sharedPreferences = SharedPreferences(this)
+        val newListCoin: MutableList<Coin> = sharedPreferences.getAllFavoriteCoins()
 
         return newListCoin
     }
@@ -98,12 +75,11 @@ class FavoriteActivity : AppCompatActivity(), View.OnClickListener, ClickItemLis
 
     override fun onResume() {
         super.onResume()
-        observerFavorites()
+        initFavoritesList()
     }
 
     override fun onDialogPositiveClick(dialog: DialogFragment) {
-        initViewModel()
-        observerFavorites()
+        initFavoritesList()
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {

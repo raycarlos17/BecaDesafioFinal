@@ -1,4 +1,4 @@
-package com.example.commons.model.api
+package com.app.bitcoinapp.model.api
 
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory

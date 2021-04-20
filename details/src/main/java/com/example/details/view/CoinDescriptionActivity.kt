@@ -41,7 +41,7 @@ class CoinDescriptionActivity : AppCompatActivity(), View.OnClickListener {
     }
 
     private fun verifyFavorite() {
-        val statusFavorite = sharedPreferences.getBoolean(coin?.assetId.toString())
+        val statusFavorite = sharedPreferences.containsKey(coin?.assetId.toString())
         if (statusFavorite) {
             btn_add_favorite.text = getString(R.string.btn_add_favorite_delete)
             btn_add_favorite.contentDescription = getString(R.string.btn_add_favorite_delete)
@@ -76,24 +76,27 @@ class CoinDescriptionActivity : AppCompatActivity(), View.OnClickListener {
 
         Picasso.get().load("${coin?.iconUrl}.png").placeholder(R.drawable.ic_image).into(iv_coin)
 
-        if (sharedPreferences.getBoolean(coin?.assetId.toString())) {
+        if (sharedPreferences.containsKey(coin?.assetId.toString())) {
             iv_favorite.visibility = View.VISIBLE
-        } else if (!sharedPreferences.getBoolean(coin?.assetId.toString())) {
+        } else {
             iv_favorite.visibility = View.GONE
         }
     }
 
     override fun onClick(v: View) {
         val id = v.id
+
         when (id) {
             R.id.btn_add_favorite -> {
                 val statusBtn = btn_add_favorite.text.toString()
                 if (statusBtn == "ADICIONAR") {
-                    sharedPreferences.storeBoolean(coin?.assetId.toString(), true)
+                    coin?.favorite = true
+                    sharedPreferences.storeCoinAsJson(coin?.assetId.toString(), coin)
                     verifyFavorite()
                     setupCoin()
                 } else if (statusBtn == "REMOVER") {
-                    sharedPreferences.storeBoolean(coin?.assetId.toString(), false)
+                    coin?.favorite = false
+                    sharedPreferences.removeKey(coin?.assetId.toString())
                     verifyFavorite()
                     setupCoin()
                 }

@@ -1,4 +1,4 @@
-package com.example.commons.model.viewmodel
+package com.app.bitcoinapp.viewmodel
 
 import android.util.Log
 import androidx.fragment.app.DialogFragment
@@ -6,11 +6,11 @@ import androidx.fragment.app.FragmentManager
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import com.app.bitcoinapp.model.api.CoinRestApiTask
+import com.app.bitcoinapp.repository.CoinsRepository
 import com.example.commons.R
 import com.example.commons.model.Coin
-import com.example.commons.model.api.CoinRestApiTask
 import com.example.commons.model.helper.AlertDialog
-import com.example.commons.model.repository.CoinsRepository
 import java.text.NumberFormat
 import java.util.*
 

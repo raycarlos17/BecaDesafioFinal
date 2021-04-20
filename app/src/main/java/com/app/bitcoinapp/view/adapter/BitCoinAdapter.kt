@@ -63,9 +63,9 @@ class BitCoinViewHolder(
         Picasso.get().load("${bitCoin.iconUrl}.png")
             .placeholder(R.drawable.ic_image)
             .into(image)
-        if (sharedPreferences.getBoolean(bitCoin.assetId)){
+        if (sharedPreferences.containsKey(bitCoin.assetId)){
             imageFavorite.visibility = View.VISIBLE
-        }else if(!sharedPreferences.getBoolean(bitCoin.assetId)){
+        }else if(!sharedPreferences.containsKey(bitCoin.assetId)){
             imageFavorite.visibility = View.GONE
         }
         value.contentDescription = "Valor da moeda ${bitCoin.priceUsd}"

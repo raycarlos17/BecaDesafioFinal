@@ -1,7 +1,7 @@
-package com.example.commons.model.repository
+package com.app.bitcoinapp.repository
 
+import com.app.bitcoinapp.model.api.CoinRestApiTask
 import com.example.commons.model.Coin
-import com.example.commons.model.api.CoinRestApiTask
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response

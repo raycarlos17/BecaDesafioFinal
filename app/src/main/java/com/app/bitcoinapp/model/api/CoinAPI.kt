@@ -1,4 +1,4 @@
-package com.example.commons.model.api
+package com.app.bitcoinapp.model.api
 
 import com.example.commons.model.Coin
 import retrofit2.Call

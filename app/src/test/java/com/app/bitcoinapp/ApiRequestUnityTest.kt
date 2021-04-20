@@ -1,6 +1,5 @@
 package com.app.bitcoinapp
 
-import com.app.bitcoinapp.model.api.CoinRestApiTask_old
 import org.junit.Test
 
 import org.junit.Assert.*

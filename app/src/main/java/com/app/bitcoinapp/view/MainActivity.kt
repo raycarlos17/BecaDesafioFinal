@@ -17,11 +17,11 @@ import com.example.commons.model.helper.AlertDialog
 import com.example.commons.model.helper.ClickItemListener
 import com.example.commons.model.helper.SetDate
 import com.app.bitcoinapp.view.adapter.BitCoinAdapter
+import com.app.bitcoinapp.viewmodel.MainViewModel
 import com.example.commons.model.Coin
 import com.example.commons.model.helper.BottomNavigation
 import com.example.commons.model.helper.Constants.Companion.REQUEST_CODE
 import com.example.commons.model.helper.Constants.Companion.RESULT_FAVORITES
-import com.example.commons.model.viewmodel.MainViewModel
 import com.example.details.view.CoinDescriptionActivity
 import com.example.favorites.view.FavoriteActivity
 import kotlinx.android.synthetic.main.activity_main.*
