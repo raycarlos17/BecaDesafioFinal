@@ -6,19 +6,19 @@ import androidx.fragment.app.FragmentManager
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.app.bitcoinapp.R
-import com.app.bitcoinapp.model.api.CoinRestApiTask_old
-import com.app.bitcoinapp.repository.CoinsRepository_old
+import com.app.bitcoinapp.model.api.CoinRestApiTask
+import com.app.bitcoinapp.repository.CoinsRepository
+import com.example.commons.R
 import com.example.commons.model.Coin
 import com.example.commons.model.helper.AlertDialog
 import java.text.NumberFormat
 import java.util.*
 
-class MainViewModel_old : ViewModel() {
+class MainViewModel : ViewModel() {
 
     private lateinit var supportFragmentManager: FragmentManager
-    private val coinRestApiTask = CoinRestApiTask_old()
-    private val coinsRepository = CoinsRepository_old(coinRestApiTask)
+    private val coinRestApiTask = CoinRestApiTask()
+    private val coinsRepository = CoinsRepository(coinRestApiTask)
     private val usd = Currency.getInstance("USD")
     private var formatUSDCurrency = NumberFormat.getCurrencyInstance(Locale.US)
 
@@ -66,15 +66,15 @@ class MainViewModel_old : ViewModel() {
     private fun onRequestError(code: Int?, message: String?){
         var alert: DialogFragment?
         when {
-            (code == BAD_REQUEST_CODE) -> {alert = AlertDialog("Erro $code: ${R.string.bad_request}")
+            (code == BAD_REQUEST_CODE) -> {alert = AlertDialog("Erro $code: ${R.string.commons_bad_request}")
             }
-            (code == UNAUTHORIZED_CODE) -> {alert = AlertDialog("Erro $code: ${R.string.unauthorized}")
+            (code == UNAUTHORIZED_CODE) -> {alert = AlertDialog("Erro $code: ${R.string.commons_unauthorized}")
             }
-            (code == FORBIDDEN_CODE) -> {alert = AlertDialog("Erro $code: ${R.string.forbiden}")
+            (code == FORBIDDEN_CODE) -> {alert = AlertDialog("Erro $code: ${R.string.commons_forbiden}")
             }
-            (code == MAX_REQUESTS_CODE) -> {alert = AlertDialog("Erro $code: ${R.string.max_request}")
+            (code == MAX_REQUESTS_CODE) -> {alert = AlertDialog("Erro $code: ${R.string.commons_max_request}")
             }
-            (code == NO_DATA_CODE) -> {alert = AlertDialog("Erro $code: ${R.string.no_data}")
+            (code == NO_DATA_CODE) -> {alert = AlertDialog("Erro $code: ${R.string.commons_no_data}")
             }
             (code == null && message != null) -> {alert = AlertDialog(message)
             }

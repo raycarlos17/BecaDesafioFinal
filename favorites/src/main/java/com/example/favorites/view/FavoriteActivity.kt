@@ -15,7 +15,6 @@ import com.example.commons.model.Coin
 import com.example.commons.model.helper.*
 import com.example.commons.model.helper.Constants.Companion.REQUEST_CODE
 import com.example.commons.model.helper.Constants.Companion.RESULT_MAIN
-import com.example.commons.model.viewmodel.MainViewModel
 import com.example.details.view.CoinDescriptionActivity
 import com.example.favorites.R
 import com.example.favorites.view.adapter.FavoritesAdapter
