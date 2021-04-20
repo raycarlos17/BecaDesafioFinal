@@ -11,7 +11,12 @@
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$" />
+            <option value="$PROJECT_DIR$/F" />
             <option value="$PROJECT_DIR$/app" />
+            <option value="$PROJECT_DIR$/commons" />
+            <option value="$PROJECT_DIR$/details" />
+            <option value="$PROJECT_DIR$/favorites" />
+            <option value="$PROJECT_DIR$/favoritos" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />

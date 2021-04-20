@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="favorites_title_main_activity">Moeda Digital</string>
+    <string name="favorites_tv_title_bitcoin">Bitcoin</string>
+    <string name="favorites_btc_title_tv">BTC</string>
+    <string name="favorites_coin_value_hint_zero">$ 000.000.00</string>
+    <string name="favorites_iv_content_description_coin_image">Imagem da moeda</string>
+</resources>
