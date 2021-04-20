@@ -28,7 +28,6 @@
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-
     <GridView
         android:id="@+id/gv_list_coin_favorite"
         android:layout_width="match_parent"
@@ -44,9 +43,9 @@
 
     <include
         android:id="@+id/bottomNavigationViewComponent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
+        layout="@layout/commons_bottom_navigation_view_component"
         app:layout_constraintBottom_toBottomOf="parent"
-        layout="@layout/commons_bottom_navigation_view_component"/>
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
