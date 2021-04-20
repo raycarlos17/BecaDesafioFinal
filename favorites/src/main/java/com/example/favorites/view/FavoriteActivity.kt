@@ -4,6 +4,7 @@ import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.view.View
+import android.widget.ImageButton
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.ActionBar
@@ -18,9 +19,6 @@ import com.example.commons.model.viewmodel.MainViewModel
 import com.example.details.view.CoinDescriptionActivity
 import com.example.favorites.R
 import com.example.favorites.view.adapter.FavoritesAdapter
-import kotlinx.android.synthetic.main.bottom_navigation_view_component.btn_detail
-import kotlinx.android.synthetic.main.bottom_navigation_view_component.tv_btn_detail
-import kotlinx.android.synthetic.main.bottom_navigation_view_component.btn_main
 import kotlinx.android.synthetic.main.coin_favorites_recyclerview.*
 
 class FavoriteActivity : AppCompatActivity(), View.OnClickListener, ClickItemListener, AlertDialog.AlertDialogListener {
@@ -37,11 +35,15 @@ class FavoriteActivity : AppCompatActivity(), View.OnClickListener, ClickItemLis
         supportActionBar?.setCustomView(R.layout.abs_main_item)
 
         val date:TextView = findViewById(R.id.tv_date)
+        val btnMain: ImageButton = findViewById(R.id.btn_main)
+        val btnDetail: ImageButton = findViewById(R.id.btn_detail)
+        val tvBtnDetail: TextView = findViewById(R.id.tv_btn_detail)
+
         date.text = setDate.getLocalDate()
         date.contentDescription = setDate.getLocalDate()
-        bottomNavigation.colorsNavigation(btn_detail, tv_btn_detail, "#9a9b54")
+        bottomNavigation.colorsNavigation(btnDetail, tvBtnDetail, "#9a9b54")
 
-        btn_main.setOnClickListener(this)
+        btnMain.setOnClickListener(this)
 
         initViewModel()
         observerFavorites()

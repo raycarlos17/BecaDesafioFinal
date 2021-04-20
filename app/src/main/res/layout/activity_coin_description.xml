@@ -210,7 +210,7 @@
 
     <include
         android:id="@+id/bottomNavigationViewComponent"
-        layout="@layout/bottom_navigation_view_component"
+        layout="@layout/commons_bottom_navigation_view_component"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"

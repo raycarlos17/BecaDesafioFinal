@@ -29,7 +29,7 @@
                 android:layout_gravity="top"
                 android:backgroundTint="@color/commons_primaryColor"
                 android:padding="100dp"
-                android:src="@drawable/ic_baseline_attach_money_24" />
+                android:src="@drawable/commons_ic_baseline_attach_money_24" />
 
             <TextView
                 android:id="@+id/tv_btn_main"
@@ -53,7 +53,7 @@
                 android:layout_height="50dp"
                 android:backgroundTint="@color/commons_primaryColor"
                 android:padding="100dp"
-                android:src="@drawable/ic_baseline_star_24" />
+                android:src="@drawable/commons_ic_baseline_star_24" />
 
             <TextView
                 android:id="@+id/tv_btn_detail"
