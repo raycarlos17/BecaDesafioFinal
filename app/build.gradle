@@ -42,9 +42,6 @@ dependencies {
     implementation 'com.squareup.retrofit2:retrofit:2.9.0'
     implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
     implementation 'com.squareup.picasso:picasso:2.71828'
-//    implementation project(":commons")
-//    implementation project(":favorites")
-//    implementation project(":details")
     implementation files("libs/commons-debug.aar")
     implementation files("libs/details-debug.aar")
     implementation files("libs/favorites-debug.aar")

@@ -19,13 +19,16 @@ import com.example.commons.model.helper.SetDate
 import com.app.bitcoinapp.view.adapter.BitCoinAdapter
 import com.example.commons.model.Coin
 import com.example.commons.model.helper.BottomNavigation
+import com.example.commons.model.helper.Constants.Companion.REQUEST_CODE
+import com.example.commons.model.helper.Constants.Companion.RESULT_FAVORITES
 import com.example.commons.model.viewmodel.MainViewModel
 import com.example.details.view.CoinDescriptionActivity
 import com.example.favorites.view.FavoriteActivity
 import kotlinx.android.synthetic.main.activity_main.*
 
 
-class MainActivity : AppCompatActivity(), View.OnClickListener, ClickItemListener, AlertDialog.AlertDialogListener {
+class MainActivity : AppCompatActivity(), View.OnClickListener, ClickItemListener,
+    AlertDialog.AlertDialogListener {
 
     private lateinit var mainViewModel: MainViewModel
     private val setDate = SetDate()
@@ -54,16 +57,16 @@ class MainActivity : AppCompatActivity(), View.OnClickListener, ClickItemListene
         initSearch()
     }
 
-    private fun initViewModel(){
+    private fun initViewModel() {
         mainViewModel = ViewModelProvider.NewInstanceFactory().create(MainViewModel::class.java)
         mainViewModel.init(this.supportFragmentManager, ConnectionState().isConnected(this))
     }
 
-    private fun mainViewObserver(){
-        mainViewModel.bitCoinsList.observe(this, {  list ->
-            if (list != null){
+    private fun mainViewObserver() {
+        mainViewModel.bitCoinsList.observe(this, { list ->
+            if (list != null) {
                 bit_coin_list.adapter = BitCoinAdapter(this, list, this)
-            }else{
+            } else {
                 Toast.makeText(
                     this,
                     "Ops tivemos um problema, tente novamente mais tarde!",
@@ -73,11 +76,11 @@ class MainActivity : AppCompatActivity(), View.OnClickListener, ClickItemListene
         })
     }
 
-    private fun searchCoins(search: String){
+    private fun searchCoins(search: String) {
         val searchedCoins: MutableList<Coin> = arrayListOf()
-        mainViewModel.bitCoinsList.value?.forEach{
-            if(it.name != null){
-                if(it.name.contains(search, ignoreCase = true)){
+        mainViewModel.bitCoinsList.value?.forEach {
+            if (it.name != null) {
+                if (it.name.contains(search, ignoreCase = true)) {
                     searchedCoins.add(it)
                 }
             }
@@ -85,9 +88,9 @@ class MainActivity : AppCompatActivity(), View.OnClickListener, ClickItemListene
         bit_coin_list.adapter = BitCoinAdapter(this, searchedCoins, this)
     }
 
-    private fun initSearch(){
+    private fun initSearch() {
 
-        sv_search_bar.setOnQueryTextListener(object: SearchView.OnQueryTextListener{
+        sv_search_bar.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
             override fun onQueryTextSubmit(query: String): Boolean {
                 searchCoins(query)
                 return false
@@ -103,7 +106,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener, ClickItemListene
     override fun onClick(v: View) {
         val id = v.id
 
-        when{
+        when {
             (id == R.id.btn_main) -> {
                 val intent = Intent(this, MainActivity::class.java)
                 startActivity(intent)
@@ -120,7 +123,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener, ClickItemListene
     override fun ClickItemList(coin: com.example.commons.model.Coin) {
         val intent = Intent(this, CoinDescriptionActivity::class.java)
         intent.putExtra("EXTRA_COIN", coin)
-        startActivity(intent)
+        startActivityForResult(intent, REQUEST_CODE)
     }
 
     override fun onResume() {
@@ -133,4 +136,13 @@ class MainActivity : AppCompatActivity(), View.OnClickListener, ClickItemListene
         mainViewObserver()
     }
 
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+
+        println("RS: $resultCode  RF: $RESULT_FAVORITES")
+        if (resultCode == RESULT_FAVORITES) {
+            val intent = Intent(this, FavoriteActivity::class.java)
+            startActivity(intent)
+        }
+    }
 }

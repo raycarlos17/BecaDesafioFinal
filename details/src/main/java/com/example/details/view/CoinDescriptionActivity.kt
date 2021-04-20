@@ -7,6 +7,8 @@ import android.view.View
 import android.widget.ImageButton
 import com.example.commons.model.Coin
 import com.example.commons.model.helper.SharedPreferences
+import com.example.commons.model.helper.Constants.Companion.RESULT_FAVORITES
+import com.example.commons.model.helper.Constants.Companion.RESULT_MAIN
 import com.example.details.R
 import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.activity_coin_description.*
@@ -101,17 +103,18 @@ class CoinDescriptionActivity : AppCompatActivity(), View.OnClickListener {
                 backButton()
             }
             R.id.btn_main -> {
-                backButton()
+                setResult(RESULT_MAIN)
+                finish()
             }
             R.id.btn_detail -> {
-//                val intentFavorite = Intent(this, FavoriteActivity_old::class.java)
-//                startActivity(intentFavorite)
-                backButton()
+                setResult(RESULT_FAVORITES)
+                finish()
             }
         }
     }
 
     private fun backButton() {
+        setResult(RESULT_CANCELED)
         finish()
     }
 }
