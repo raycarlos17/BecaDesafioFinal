@@ -1,11 +1,11 @@
 package com.app.bitcoinapp.view
 
-import android.app.Application
 import com.example.commons.model.helper.ConnectionState
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import android.widget.ImageButton
 import android.widget.SearchView
 import android.widget.TextView
 import android.widget.Toast
@@ -23,9 +23,7 @@ import com.example.commons.model.viewmodel.MainViewModel
 import com.example.details.view.CoinDescriptionActivity
 import com.example.favorites.view.FavoriteActivity
 import kotlinx.android.synthetic.main.activity_main.*
-import kotlinx.android.synthetic.main.bottom_navigation_view_component.btn_detail
-import kotlinx.android.synthetic.main.bottom_navigation_view_component.btn_main
-import kotlinx.android.synthetic.main.bottom_navigation_view_component.tv_btn_main
+
 
 class MainActivity : AppCompatActivity(), View.OnClickListener, ClickItemListener, AlertDialog.AlertDialogListener {
 
@@ -40,12 +38,16 @@ class MainActivity : AppCompatActivity(), View.OnClickListener, ClickItemListene
         supportActionBar?.setCustomView(R.layout.abs_main_item)
 
         val date: TextView = findViewById(R.id.tv_date)
+        val btnMain: ImageButton = findViewById(R.id.btn_main)
+        val btnDetail: ImageButton = findViewById(R.id.btn_detail)
+        val tvBtnMain: TextView = findViewById(R.id.tv_btn_main)
+
         date.text = setDate.getLocalDate()
         date.contentDescription = setDate.getLocalDate()
-        bottomNavigation.colorsNavigation(btn_main, tv_btn_main, "#9a9b54")
+        bottomNavigation.colorsNavigation(btnMain, tvBtnMain, "#9a9b54")
 
-        btn_main.setOnClickListener(this)
-        btn_detail.setOnClickListener(this)
+        btnMain.setOnClickListener(this)
+        btnDetail.setOnClickListener(this)
 
         initViewModel()
         mainViewObserver()

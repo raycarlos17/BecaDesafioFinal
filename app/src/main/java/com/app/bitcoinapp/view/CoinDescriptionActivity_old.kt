@@ -4,12 +4,12 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import android.widget.Button
+import android.widget.ImageButton
 import com.app.bitcoinapp.R
 import com.example.commons.model.Coin
 import com.example.commons.model.helper.SharedPreferences
 import com.squareup.picasso.Picasso
-import kotlinx.android.synthetic.main.bottom_navigation_view_component.btn_detail
-import kotlinx.android.synthetic.main.bottom_navigation_view_component.btn_main
 import kotlinx.android.synthetic.main.activity_coin_description.*
 
 class CoinDescriptionActivity_old : AppCompatActivity(), View.OnClickListener {
@@ -27,9 +27,12 @@ class CoinDescriptionActivity_old : AppCompatActivity(), View.OnClickListener {
             supportActionBar!!.hide()
         }
 
+        val btnDetail: ImageButton = findViewById(R.id.btn_detail)
+        val btnMain: ImageButton = findViewById(R.id.btn_main)
+
         btn_add_favorite.setOnClickListener(this)
-        btn_detail.setOnClickListener(this)
-        btn_main.setOnClickListener(this)
+        btnDetail.setOnClickListener(this)
+        btnMain.setOnClickListener(this)
         ll_button_back.setOnClickListener(this)
 
         getExtras()
