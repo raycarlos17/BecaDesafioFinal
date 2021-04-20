@@ -34,6 +34,7 @@
         android:layout_height="wrap_content"
         android:gravity="center"
         android:text="@string/nao_possui_moedas_adicionadas_favoritos"
+        android:contentDescription="@string/nao_possui_moedas_adicionadas_favoritos"
         android:textAlignment="center"
         android:textColor="@color/favorites_colorPrimaryLight"
         android:textSize="21sp"
