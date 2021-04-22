@@ -66,15 +66,15 @@ class MainViewModel : ViewModel() {
     private fun onRequestError(code: Int?, message: String?){
         var alert: DialogFragment?
         when {
-            (code == BAD_REQUEST_CODE) -> {alert = AlertDialog("Erro $code: ${R.string.commons_bad_request}")
+            (code == BAD_REQUEST_CODE) -> {alert = AlertDialog("Erro $code: Bad Request -- There is something wrong with your request")
             }
-            (code == UNAUTHORIZED_CODE) -> {alert = AlertDialog("Erro $code: ${R.string.commons_unauthorized}")
+            (code == UNAUTHORIZED_CODE) -> {alert = AlertDialog("Erro $code: Unauthorized -- Your API key is wrong")
             }
-            (code == FORBIDDEN_CODE) -> {alert = AlertDialog("Erro $code: ${R.string.commons_forbiden}")
+            (code == FORBIDDEN_CODE) -> {alert = AlertDialog("Erro $code: Forbidden -- Your API key doesnt have enough privileges to access this resource")
             }
-            (code == MAX_REQUESTS_CODE) -> {alert = AlertDialog("Erro $code: ${R.string.commons_max_request}")
+            (code == MAX_REQUESTS_CODE) -> {alert = AlertDialog("Erro $code: Too many requests -- You have exceeded your API key rate limits")
             }
-            (code == NO_DATA_CODE) -> {alert = AlertDialog("Erro $code: ${R.string.commons_no_data}")
+            (code == NO_DATA_CODE) -> {alert = AlertDialog("Erro $code: No data -- You requested specific single item that we dont have at this moment.")
             }
             (code == null && message != null) -> {alert = AlertDialog(message)
             }
