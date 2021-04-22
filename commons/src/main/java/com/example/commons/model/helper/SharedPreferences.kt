@@ -8,7 +8,7 @@ class SharedPreferences(context: Context) {
 
     private val mSharedPreferences = context.getSharedPreferences("APP", Context.MODE_PRIVATE)
 
-    fun storeCoinAsJson(key: String, coin: Coin?){
+    fun storeCoinAsJson(coin: Coin?){
         val jsonCoin = Gson().toJson(coin)
         mSharedPreferences.edit().putString(coin?.assetId, jsonCoin).apply()
     }

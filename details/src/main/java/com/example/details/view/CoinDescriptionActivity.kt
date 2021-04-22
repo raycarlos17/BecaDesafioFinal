@@ -91,7 +91,7 @@ class CoinDescriptionActivity : AppCompatActivity(), View.OnClickListener {
                 val statusBtn = btn_add_favorite.text.toString()
                 if (statusBtn == "ADICIONAR") {
                     coin?.favorite = true
-                    sharedPreferences.storeCoinAsJson(coin?.assetId.toString(), coin)
+                    sharedPreferences.storeCoinAsJson(coin)
                     verifyFavorite()
                     setupCoin()
                 } else if (statusBtn == "REMOVER") {
