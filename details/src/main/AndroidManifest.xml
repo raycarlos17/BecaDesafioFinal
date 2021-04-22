@@ -4,14 +4,7 @@
 
     <application>
 
-        <activity android:name="com.example.details.view.CoinDescriptionActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+        <activity android:name="com.example.details.view.CoinDescriptionActivity" />
 
     </application>
-
 </manifest>
