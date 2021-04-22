@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="favorites_primaryColor">#FF000000</color>
+    <color name="favorites_colorPrimaryVariant">#302F2F</color>
+    <color name="favorites_colorPrimaryLight">#8A8989</color>
+    <color name="favorites_white">#FFFFFFFF</color>
+    <color name="favorites_colorSecondary">#9a9b54</color>
+    <color name="favorites_colorSecondaryVariant">#cccc82</color>
+    <color name="favorites_colorSecundaryDark">#6a6d28</color>
+    <color name="favorites_textColor">#F3F3F3</color>
+</resources>

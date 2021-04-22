@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="commons_primaryColor">#FF000000</color>
+    <color name="commons_colorPrimaryVariant">#302F2F</color>
+    <color name="commons_colorPrimaryLight">#8A8989</color>
+    <color name="commons_white">#FFFFFFFF</color>
+    <color name="commons_colorSecondary">#9a9b54</color>
+    <color name="commons_colorSecondaryVariant">#cccc82</color>
+    <color name="commons_colorSecundaryDark">#6a6d28</color>
+</resources>

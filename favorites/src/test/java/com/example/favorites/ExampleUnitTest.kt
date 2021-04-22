@@ -1,4 +1,4 @@
-package com.app.bitcoinapp
+package com.example.favorites
 
 import org.junit.Test
 

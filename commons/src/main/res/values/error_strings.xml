@@ -1,0 +1,7 @@
+<resources>
+    <string name="commons_bad_request">Bad Request -- There is something wrong with your request</string>
+    <string name="commons_unauthorized">Unauthorized -- Your API key is wrong</string>
+    <string name="commons_forbiden">Forbidden -- Your API key doesnt have enough privileges to access this resource</string>
+    <string name="commons_max_request">Too many requests -- You have exceeded your API key rate limits</string>
+    <string name="commons_no_data">No data -- You requested specific single item that we dont have at this moment.</string>
+</resources>

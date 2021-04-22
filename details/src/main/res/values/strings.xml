@@ -1,0 +1,13 @@
+<resources>
+    <string name="details_btc_title_tv">BTC</string>
+    <string name="details_btn_adicionar">ADICIONAR</string>
+    <string name="details_volumes_negociados">volumes negociados</string>
+    <string name="details_ltima_hora">última hora</string>
+    <string name="details_ultimo_mes">último mês</string>
+    <string name="details_coin_value_hint_zero">$ 000.000.00</string>
+    <string name="details_iv_content_description_coin_image">Imagem da moeda</string>
+    <string name="details_tv_btn_voltar">Voltar</string>
+    <string name="btn_add_favorite_delete">REMOVER</string>
+    <string name="details_ultimo_dia">último dia</string>
+    <string name="details_botao_de_voltar_para_lista_de_moedas">Botão de voltar para lista de moedas</string>
+</resources>
