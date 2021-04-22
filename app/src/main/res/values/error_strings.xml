@@ -1,7 +1,0 @@
-<resources>
-    <string name="bad_request">Bad Request -- There is something wrong with your request</string>
-    <string name="unauthorized">Unauthorized -- Your API key is wrong</string>
-    <string name="forbiden">Forbidden -- Your API key doesnt have enough privileges to access this resource</string>
-    <string name="max_request">Too many requests -- You have exceeded your API key rate limits</string>
-    <string name="no_data">No data -- You requested specific single item that we dont have at this moment.</string>
-</resources>
